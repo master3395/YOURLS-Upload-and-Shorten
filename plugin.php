@@ -121,9 +121,10 @@ function my_upload_and_shorten_save_files() {
 	$my_uploaddir = SHARE_DIR;	// has to be defined in user/config.php like this: 
 					// define( 'SHARE_DIR', '/full/path/to/httpd/directory/' );
 
-	// Handle the filename's extension
+	$my_upload_filename = pathinfo($_FILES['file_upload']['name'], PATHINFO_FILENAME);
 	$my_upload_extension = pathinfo($_FILES['file_upload']['name'], PATHINFO_EXTENSION);
 
+	// Handle the extension
 	// If there is any extension at all then append it with a leading dot
 	if(isset($my_upload_extension) && $my_upload_extension != NULL) {
 		$my_extension = '.' . $my_upload_extension;
@@ -131,10 +132,11 @@ function my_upload_and_shorten_save_files() {
 	// If the following option is checked then drop the filename's extension to obfuscate the filetype. 
 	// Beware: Some webservers won't send an appropriate HTTP-Header then!
 	if(isset($_POST['drop_extension']) && $_POST['drop_extension'] = "checked" ) {
-		$my_extension = '';
+		// beware of "dot-files"! They begin with the extension and thus have no filename!
+		if(isset($my_upload_filename) && $my_upload_filename != '') $my_extension = '';	
 		}
 
-	$my_upload_filename = pathinfo($_FILES['file_upload']['name'], PATHINFO_FILENAME);
+	// Handle the filename
 	if(isset($_POST['convert_filename'])) {
 		switch ($_POST['convert_filename']) { 
 			case 'original': {
