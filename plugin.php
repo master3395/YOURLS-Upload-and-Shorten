@@ -3,7 +3,7 @@
 Plugin Name: Upload & Shorten
 Plugin URI: https://github.com/fredl99/YOURLS-Upload-and-Shorten
 Description: Upload a file and create a short-YOURL for it in one step.
-Version: 1.3/testing
+Version: 1.3/stable
 Author: Fredl
 Author URI: https://github.com/fredl99
 */
