@@ -1,59 +1,155 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: upload_and_shorten\n"
-"POT-Creation-Date: 2015-02-28 17:09+0100\n"
-"PO-Revision-Date: 2015-03-01 21:35+0100\n"
+"POT-Creation-Date: 2016-10-16 15:47+0100\n"
+"PO-Revision-Date: 2016-10-16 16:03+0100\n"
 "Last-Translator: Fredl <fredl99@users.noreply.github.com>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;yourls__;yourls_e;yourls_s;"
-"yourls_se;yourls_esc_attr__;yourls_esc_html__;yourls_x;yourls_ex;"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-KeywordsList: _;my_say__;gettext;gettext_noop;yourls__;yourls_e;"
+"yourls_s;yourls_se;yourls_esc_attr__;yourls_esc_html__;yourls_x;yourls_ex;"
 "yourls_esc_attr_x;yourls_esc_html_x;yourls_n:1,2;yourls_nx:1,2;"
 "yourls_n_noop:1,2;yourls_nx_noop:1,2\n"
-"X-Poedit-Basepath: .\n"
+"X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2;plural=n!=1;\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPath-1: ..\n"
+"X-Poedit-SearchPath-0: ..\n"
 
-#: ../plugin.php:35
-msgid "Upload & Shorten"
-msgstr "Upload & Shorten"
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:40
+#: ../YOURLS-Upload-and-Shorten/plugin.php:40
+msgid "Send a file to your webserver and create a short-URL for it."
+msgstr "Lade eine Datei auf deinen Webserver und erzeuge eine Short-URL dafür."
 
-#: ../plugin.php:36
-msgid ""
-"Here you can upload a file to your webserver and create a short-URL for it."
-msgstr ""
-"Hier kannst du eine Datei auf deinen Webserver hochladen und eine Short-URL "
-"dafür erzeugen."
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:46
+#: ../YOURLS-Upload-and-Shorten/plugin.php:46
+msgid "Select a file "
+msgstr "Datei auswählen "
 
-#: ../plugin.php:37
-msgid "Select file to upload: "
-msgstr "Datei zum Hochladen auswählen: "
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:52
+#: ../YOURLS-Upload-and-Shorten/plugin.php:52
+msgid "YOURLS database options"
+msgstr "YOURLS Datenbank-Optionen"
 
-#: ../plugin.php:38
-msgid "Optional custom keyword: "
-msgstr "Benutzerdefinierter Kurzname (optional): "
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:54
+#: ../YOURLS-Upload-and-Shorten/plugin.php:54
+msgid "Custom shortname: "
+msgstr "Benutzerdefinierter Kurzname: "
 
-#: ../plugin.php:39
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:57
+#: ../YOURLS-Upload-and-Shorten/plugin.php:57
+msgid "Custom title: "
+msgstr "Benutzerdefinierter Titel: "
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:63
+#: ../YOURLS-Upload-and-Shorten/plugin.php:63
+msgid "Filename conversions (optional)"
+msgstr "Dateinamen ändern (optional)"
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:66
+#: ../YOURLS-Upload-and-Shorten/plugin.php:66
+msgid "No conversion "
+msgstr "Keine Änderung "
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:67
+#: ../YOURLS-Upload-and-Shorten/plugin.php:67
+msgid "Filename will not be changed at all."
+msgstr "Dateinamen nicht verändern."
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:71
+#: ../YOURLS-Upload-and-Shorten/plugin.php:71
+msgid "Browser-safe filename "
+msgstr "Browser-sichere Dateinamen "
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:72
+#: ../YOURLS-Upload-and-Shorten/plugin.php:72
+msgid "Recommended if the file should be accessed by web-browsers."
+msgstr "Empfohlen wenn die Datei für Web-Browser zugänglich sein soll."
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:76
+#: ../YOURLS-Upload-and-Shorten/plugin.php:76
 msgid "Randomize filename "
-msgstr "Zufälligen Dateinamen erzeugen"
+msgstr "Zufälliger Dateiname "
 
-#: ../plugin.php:40
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:77
+#: ../YOURLS-Upload-and-Shorten/plugin.php:77
+msgid ""
+"Browser-safe filenames with a slight protection against systematic crawling "
+"your web-directory."
+msgstr ""
+"Browser-sichere Dateinamen, zusätzlich etwas Schutz gegen systematisches "
+"Ausspähen deines Web-Verzeichnisses."
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:81
+#: ../YOURLS-Upload-and-Shorten/plugin.php:81
+msgid "Drop extension "
+msgstr "Erweiterung entfernen "
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:82
+#: ../YOURLS-Upload-and-Shorten/plugin.php:82
+msgid "Hide the filetype. Can be combined with above options."
+msgstr "Dateityp verschleiern. Kann mit obigen Optionen kombiniert werden."
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:84
+#: ../YOURLS-Upload-and-Shorten/plugin.php:84
+msgid ""
+"Some webservers won't send correct headers and web-browsers may not handle "
+"the file correctly."
+msgstr ""
+"Manche Web-Server senden dann keine korrekten Header und Web-Browser könnten "
+"die Datei nicht richtig darstellen."
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:90
+#: ../YOURLS-Upload-and-Shorten/plugin.php:90
 msgid "  Go!  "
 msgstr "  Los!  "
 
-#: ../plugin.php:63
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:100
+#: ../YOURLS-Upload-and-Shorten/plugin.php:100
+msgid "This plugin is hosted at "
+msgstr "Plugin gehostet bei "
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:101
+#: ../YOURLS-Upload-and-Shorten/plugin.php:101
+msgid "If you like it, remember someone spends his time working on it. "
+msgstr "Wenn es dir gefällt, denk daran, daß jemand seine Zeit dafür hergibt. "
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:102
+#: ../YOURLS-Upload-and-Shorten/plugin.php:102
+msgid "A cup of coffee might stimulate further improvements. ;-) "
+msgstr "Eine Tasse Kaffee könnte zu weiteren Verbesserungen beitragen. ;-) "
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:113
+#: ../YOURLS-Upload-and-Shorten/plugin.php:113
 msgid "You need to select a file to upload."
 msgstr "Du musst eine Datei zum Hochladen auswählen."
 
-#: ../plugin.php:110
-msgid "Upload finished. This is your short-URL: "
-msgstr "Upload fertig. Das ist deine short-URL: "
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:203
+#: ../YOURLS-Upload-and-Shorten/plugin.php:203
+msgid " successfully sent. These are the links to your file:"
+msgstr " erfolgreich hochgeladen. Das sind die Links zu deiner Datei:"
 
-#: ../plugin.php:113
-msgid "Upload failed! Something went wrong, sorry! :("
-msgstr "Upload fehlgeschlagen! Irgendwas ist schiefgegangen, sorry! :( "
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:204
+#: ../YOURLS-Upload-and-Shorten/plugin.php:204
+msgid "Direct: "
+msgstr "Direkt: "
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:205
+#: ../YOURLS-Upload-and-Shorten/plugin.php:205
+msgid "Short:  "
+msgstr "Kurz-URL:  "
+
+#: ../YOURLS-Upload-and-Shorten.tmp/plugin.php:208
+#: ../YOURLS-Upload-and-Shorten/plugin.php:208
+msgid "Upload failed, sorry! The error was "
+msgstr "Upload fehlgeschlagen, sorry! Fehlermeldung: "
+
+#: ../YOURLS_plugin-sample-i18n/plugin.php:29
+msgid "This is a redirection page to: "
+msgstr ""
+
+#: ../YOURLS_plugin-sample-i18n/plugin.php:31
+msgid "to proceed"
+msgstr ""
