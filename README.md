@@ -11,9 +11,9 @@ Installation
 ------------
 1. Navigate to the folder `./user/plugins/` inside your YOURLS-install directory
 
-2. *Either* clone this repo using `git` *or*  
-  create a new folder named ´Upload-and-Shorten´ and  
-  download all files from here and drop them into that directory. 
+2. * *Either* clone this repo using `git` *or* 
+   * create a new folder named ´Upload-and-Shorten´ under your plugin-directory
+   * then download all files from here and drop them into that directory. 
 
 3. * open `./user/config.php` in your YOURLS-directory with any text editor
    * add two definitions at the end of that file:  
@@ -48,5 +48,5 @@ If you're able and willing to provide translations, please [read this](http://bl
 
 Donations
 ---------
-The more you use it the more you'll like it. And if you do, remember someone spends his time for improving it. If you want say thanks for that, just [buy him a coffee](https://fredls.net/donate). This will certainly motivate him to push further enhancements. 
-Just for You!  ![](https://fredls.net/lTh0sqmQ) and him :)
+The more you use it the more you'll like it. And if you do, remember someone spends his time for improving it. If you want say thanks for that, just [buy him a coffee](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H5B9UKVYP88X4). This will certainly motivate him to push further enhancements. 
+Just for You!  ![](http://members.aon.at/localhost/uf.de/smiley_bier.gif) and him :)
