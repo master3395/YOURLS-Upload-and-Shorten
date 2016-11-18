@@ -3,7 +3,7 @@
 Plugin Name: Upload & Shorten
 Plugin URI: https://github.com/fredl99/YOURLS-Upload-and-Shorten
 Description: Upload a file and create a short-YOURL for it in one step.
-Version: 1.3/stable
+Version: 1.4/testing
 Author: Fredl
 Author URI: https://github.com/fredl99
 */
@@ -17,7 +17,7 @@ yourls_add_action( 'plugins_loaded', 'my_upload_and_shorten_add_page' );
 
 function my_upload_and_shorten_add_page() {
 	// load custom text domain
-	yourls_load_custom_textdomain( 'upload-and-shorten', dirname(__FILE__) . '/i18n/' );
+	yourls_load_custom_textdomain( 'upload-and-shorten', dirname(__FILE__) . '/l10n/' );
 	// create entry in the admin's plugin menu
 	yourls_register_plugin_page( 'upload-and-shorten', 'Upload & Shorten', 'my_upload_and_shorten_do_page' );
 	// parameters: page slug, page title, and function that will display the page itself
@@ -121,10 +121,20 @@ function my_upload_and_shorten_save_files() {
 	$my_uploaddir = SHARE_DIR;	// has to be defined in user/config.php like this: 
 					// define( 'SHARE_DIR', '/full/path/to/httpd/directory/' );
 
-	$my_upload_filename = pathinfo($_FILES['file_upload']['name'], PATHINFO_FILENAME);
+	// Handle the filename's extension
 	$my_upload_extension = pathinfo($_FILES['file_upload']['name'], PATHINFO_EXTENSION);
 
-	// Handle the filename
+	// If there is any extension at all then append it with a leading dot
+	if(isset($my_upload_extension) && $my_upload_extension != NULL) {
+		$my_extension = '.' . $my_upload_extension;
+		}
+	// If the following option is checked then drop the filename's extension to obfuscate the filetype. 
+	// Beware: Some webservers won't send an appropriate HTTP-Header then!
+	if(isset($_POST['drop_extension']) && $_POST['drop_extension'] = "checked" ) {
+		$my_extension = '';
+		}
+
+	$my_upload_filename = pathinfo($_FILES['file_upload']['name'], PATHINFO_FILENAME);
 	if(isset($_POST['convert_filename'])) {
 		switch ($_POST['convert_filename']) { 
 			case 'original': {
@@ -135,10 +145,6 @@ function my_upload_and_shorten_save_files() {
 			case 'browser-safe': {
 			// make the filename web-safe: 
                         $my_filename_trim = trim($my_upload_filename);
-                        // original code:
-                        // $my_RemoveChars  = array( "([\40])" , "([^\.a-zA-Z0-9-])", "(-{2,})" );
-                        // $my_ReplaceWith = array("-", "", "-");
-                        // end original code
                         $my_RemoveChars  = array( "([^()_\-\.,0-9a-zA-Z\[\]])" );	// replace what's NOT in here!
                         $my_filename = preg_replace($my_RemoveChars, "_", $my_filename_trim);
                         $my_filename = preg_replace( "(_{2,})", "_", $my_filename);
@@ -156,20 +162,6 @@ function my_upload_and_shorten_save_files() {
 			break; 
 		}
 	}
-
-	// Handle the extension
-	// If there is any extension at all then append it with a leading dot
-	if(isset($my_upload_extension) && $my_upload_extension != NULL) {
-		$my_extension = '.' . $my_upload_extension;
-		}
-	// If the following option is checked then drop the filename's extension to obfuscate the filetype. 
-	// Beware: Some webservers won't send an appropriate HTTP-Header then!
-	if(isset($_POST['drop_extension']) && $_POST['drop_extension'] = "checked" ) {
-		// Beware of "dot-files"! They begin with the extension and thus have no filename!
-		// Only if we have a FINAL filename (i.e. a randomized) we may drop the extension.
-		if(isset($my_filename) && $my_filename != NULL) $my_extension = '';	
-		}
-
 
 	// avoid duplicate filenames
 	$my_count = 2;

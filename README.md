@@ -1,11 +1,25 @@
 YOURLS Plugin: Upload and Shorten
 =================================
 
-Plugin for [YOURLS](http://yourls.org) `1.7+`.
+Plugin for [YOURLS](http://yourls.org) (version 1.7 or newer)
 
 Description
 -----------
-Upload files to your server and create short-URLs to them in one step. Now you can share your files using shortlinks as well as URL´s. 
+Upload a file to your webserver and create a short-URL for it in one step. You can share your files using short links as well as full URL´s.  
+
+Features
+--------
+  * Change filenames in different ways during the upload
+  * Make notes for yourself in the YOURLS database entry 
+  * (by default the title field is filled with the original filename and how it was altered)
+  * Keep track of views/downloads via YOURLS´s history function
+  * Localization support (currently available: English, Spanish, German, more to come...)
+
+Requirements
+------------
+  * A webserver with PHP support
+  * A working [YOURLS](http://yourls.org) installation
+  * A bit of understanding what it does and what you can do with it ;)
 
 Installation
 ------------
@@ -31,22 +45,22 @@ Installation
 
 License
 -------
-Free for personal use only. 
-If you want to make money with it you have to contact me first.
+Free for personal use only. If you want to make money with it you have to contact me first.
 
-Localization (l10n)
---------------------
+Localization
+------------
 This plugin supports **localization** (translations in your language). 
 **For this to work you need at least YOURLS v1.7 from March 1, 2015**. Earlier versions will basically work fine, except they will not translate into other languages because of a minor bug in the YOURLS-code. Just upgrade to the latest YOURLS version. 
 
-The plugin talks English per default, translation files for German are included in the folder `i18n/`. Remember to define your locale in `user/config.php` like this:
+The plugin talks English as default. Translation files for other languages (currently as of version 1.4: Spanish and German) are included in the folder `l10n/`. Remember to define your locale in your `user/config.php` like this:
 > define( 'YOURLS_LANG', 'de_DE' ); 
 
 Looking for translators
 -----------------------
-If you're able and willing to provide translations, please [read this](http://blog.yourls.org/2013/02/workshop-how-to-create-your-own-translation-file-for-yourls/) and contact me for further instructions. Any help will be greatly appreciated by your fellow countrymen!
+If you're able and willing to provide or improve translations, please [read this](http://blog.yourls.org/2013/02/workshop-how-to-create-your-own-translation-file-for-yourls/). If you need further instructions please contact me. Any help will be greatly appreciated by your fellow countrymen!
 
 Donations
 ---------
-The more you use it the more you'll like it. And if you do, remember someone spends his time for improving it. If you want say thanks for that, just [buy him a coffee](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H5B9UKVYP88X4). This will certainly motivate him to push further enhancements. 
+The more you use it the more you'll like it. And if you do, remember someone spends his time for improving it. If you want say thanks for that, just [buy him a coffee](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H5B9UKVYP88X4). This will certainly motivate him to push further enhancements.  
 Just for You!  ![](http://members.aon.at/localhost/uf.de/smiley_bier.gif) and him :)
+
