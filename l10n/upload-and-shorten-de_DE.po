@@ -21,7 +21,6 @@ msgstr ""
 "X-Poedit-SearchPath-1: ..\n"
 
 #: ../plugin.php:40
-#, fuzzy
 msgid "Send a file to your webserver and create a short-URL for it."
 msgstr "Lade eine Datei auf deinen Webserver und erzeuge eine kurz-URL dafür."
 
