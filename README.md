@@ -20,7 +20,8 @@ Installation
  `define( 'SHARE_URL', 'http://my.domain.tld/directory/' );`  
  `# The physical path where the plugin drops your files into:`  
  `define( 'SHARE_DIR', '/full/path/to/httpd/directory/' );` 
-4. If necessary create a folder matching the name you defined in the last line above
+
+4. If necessary create a folder matching the name you defined in the last line above  
    - Make sure your webserver has read+write permissions to that directory. Explaining that exceeds the scope of this readme, please refer to the manual of your server, operating system or hosting provider. On a Linux box something like  
  `chown :www-data /full/path/to/httpd/directory &&  chmod g+rwx /full/path/to/httpd/directory`  
  should do the trick, but please don't rely on it.  
@@ -53,4 +54,7 @@ If you do, remember someone spends his time for improving it. If you want say th
 License
 -------
 Free for personal use only.  
-If you want to make money with it you have to contact me first.
+If you want to make money with it you have to contact me first.  
+
+Thanks for your attention.
+
