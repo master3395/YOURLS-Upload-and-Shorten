@@ -5,13 +5,13 @@ Plugin for [YOURLS](http://yourls.org) (version 1.7 or newer)
 
 Description
 -----------
-This plugin lets you upload a file to your webserver and automagically creates a YOURLS short-URL to it. After that you can share that file by its short link as well as its full URL.
+This plugin lets you upload a file to your webserver and automagically creates a YOURLS short-URL for it. Then you can share that file by its short link as well as its full URL.
 
 Features
 --------
   * Different ways to change the filename during the upload
   * Make a note about it for yourself in the YOURLS database (by default the title field is filled with the original filename and the alteration method)
-  * Keep track of views/downloads of the file via YOURLS´s history function
+  * Keep track of views/downloads via YOURLS´s history function
   * Localization support (currently available: English, Spanish, German, more to come...)
 
 Requirements
@@ -25,48 +25,58 @@ What you need:
 
 Installation
 ------------
-1. Navigate to the folder `./user/plugins/` inside your YOURLS-install directory
 
-* Use any of these two ways to install:
-    - **Either** clone this repo using `git`.
-    - **Or** create a new folder named ´Upload-and-Shorten´ under your plugin-directory, download all files from here and drop them into that directory. 
+  * Navigate to the folder `./user/plugins/` inside your YOURLS-install directory
 
-* Prepare your configuration:
-    * If necessary create a directory where your files can be accessed from the webserver
-    * Depending on your webserver´s setup you may have to modify the permissions of that directory
+  * Use any of these two ways to install:
+    - **Either** clone this repo using `git`
+    - **or** create a new folder named ´Upload-and-Shorten´, then download all files from here *into that directory*. 
+
+  * Prepare your configuration:
+    * If necessary create a directory where your files can be accessed from the webserver (i.e '/full/path/to/httpd/directory/')
+    * Depending on your webserver´s setup you may have to modify the permissions of that directory:  
+      - Make sure your webserver has read+write permissions for it. Explaining that is beyond the scope of this readme, please refer to the manual of your server, operating system or hosting provider. On a Linux box something like  
+       `chown :www-data /full/path/to/httpd/directory &&  chmod g+rwx /full/path/to/httpd/directory`  
+       should do the trick, but please don't rely on it.  
+       **A correct server configuration is important for its functionality, but essential for its safety!**
     * Now open `./user/config.php` in your YOURLS-directory with any text editor and ...
-    * add two definition lines:  
-    `# URL where your files will appear on the web:`  
-    `define( 'SHARE_URL', 'http://my.domain.tld/directory/' );`  
-    `# physical path of the files on your server:`  
-    `define( 'SHARE_DIR', '/full/path/to/httpd/directory/' );`  
-    
-* Go to the Plugins administration page (*eg.* `http://sho.rt/admin/plugins.php`) and activate the plugin.
+      - add these definition lines and save the file:  
+       `# Paths for plugin: "Upload-and-Shorten":`  
+       `# The web URL path where YOURLS short-links will redirect to:`  
+       `define( 'SHARE_URL', 'http://my.domain.tld/directory/' );`  
+       `# The physical path where the plugin drops your files into:`  
+       `define( 'SHARE_DIR', '/full/path/to/httpd/directory/' );` 
+       (Adjust paths to your needs...)
 
-* Have fun!
+  * Go to the Plugins Administration Page (eg. `http://sho.rt/admin/plugins.php`) and activate the plugin.
 
-* Consider helping with translations.
+  * Have fun!
 
-License
--------
-This plugin is **free for personal use** only.  
-If you want to make money with it you have to contact me first.
+  * Consider helping with translations.
 
-Localization
-------------
-This plugin supports **localization** (translations in your language).  
-*To use this feature you need at least YOURLS v1.7 from March 1, 2015. Earlier versions will basically do the work, but they don't translate due to a minor bug in the YOURLS-code. Just upgrade to the latest YOURLS version.*
 
-By default the plugin talks English. Translation files for other languages (currently Spanish and German, as of version 1.4) are included in the folder `l10n/`. You just have to define your locale in your `user/config.php` like this:
-> define( 'YOURLS_LANG', 'de_DE' ); 
+Localization (l10n)
+--------------------
+This plugin supports **localization** (translations into your language). 
+**For this to work you need at least YOURLS v1.7 from March 1, 2015**. It will basically work fine with earlier versions, except that translations won't work because of a minor bug in the YOURLS-code. Just upgrade to the latest YOURLS version and it will do. 
+
+Per default it talks English. German and Spanish translation files are included in the folder `l10n/`. Remember to define your locale in `user/config.php` like this:  
+`define( 'YOURLS_LANG', 'de_DE' );`  
 
 Looking for translators
 -----------------------
-If you're able and willing to provide or improve translations, please [read this](http://blog.yourls.org/2013/02/workshop-how-to-create-your-own-translation-file-for-yourls/) and contact me for further instructions.  
-Any help will be greatly appreciated by your fellow countrymen!
+If you're willing to provide translations, please [read this](http://blog.yourls.org/2013/02/workshop-how-to-create-your-own-translation-file-for-yourls/). If necessary you can contact me for further instructions. Any help is  appreciated, at most by your fellow countrymen!
 
 Donations
 ---------
-If you like this piece of software, remember someone spends his time for providing it. If you want say thanks for that, just [buy him a coffee](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H5B9UKVYP88X4). This will certainly motivate him to push further enhancements. Just for You!  
-... and him ![](http://members.aon.at/localhost/uf.de/smiley_bier.gif)
+There are many ways to integrate this plugin into your daily routines. The more you use it the more you will discover. The more you discover the more you will like it.  
+If you do, remember someone spends his time for improving it. If you want say thanks for that, just [buy him a coffee](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H5B9UKVYP88X4). That will certainly motivate him to make further enhancements. Just for You! ...  
+![](http://members.aon.at/localhost/uf.de/smiley_bier.gif) and him :)
+
+License
+-------
+**Free for personal use only.**  
+If you want to make money with it you have to contact me first.  
+
+Thanks for your attention.
 
