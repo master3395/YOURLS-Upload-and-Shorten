@@ -3,7 +3,7 @@
 Plugin Name: Upload & Shorten
 Plugin URI: https://github.com/fredl99/YOURLS-Upload-and-Shorten
 Description: Upload a file and create a short-YOURL for it in one step.
-Version: 1.4/testing
+Version: 1.3.1/stable
 Author: Fredl
 Author URI: https://github.com/fredl99
 */
@@ -155,7 +155,8 @@ function my_upload_and_shorten_save_files() {
 
 			case 'randomized': {
                         // make up a random name for the uploaded file
-                        // see http://www.mattytemple.com/projects/yourls-share-files/?replytocom=26686#respond
+                        // see http://www.mattytemple.com/projects/yourls-share-files/?replytocom=26686#respond (seems vanished...)
+			// (seems vanished...)
                         $my_filename = substr(md5($my_upload_filename.strtotime("now")), 0, 12);
                         // end randomize filename
                         }
