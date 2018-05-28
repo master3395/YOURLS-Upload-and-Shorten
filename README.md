@@ -64,7 +64,7 @@ Localization (l10n)
 This plugin supports **localization** (translations into your language). 
 **For this to work you need at least YOURLS v1.7 from March 1, 2015**. It will basically work fine with earlier versions, except that translations won't work because of a minor bug in the YOURLS-code. Just upgrade to the latest YOURLS version and it will do. 
 
-Per default it talks English. German and Spanish translation files are included in the folder `l10n/`. Remember to define your locale in `user/config.php` like this:  
+Per default it talks English. Translation files for German, Spanish and Simplified Chinese are included in the folder `l10n/`. Remember to define your locale in `user/config.php` like this:  
 `define( 'YOURLS_LANG', 'de_DE' );`  
 
 Looking for translators
