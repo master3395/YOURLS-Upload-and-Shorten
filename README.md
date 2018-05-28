@@ -12,7 +12,7 @@ Features
   * Different ways to change the filename during the upload
   * Make a note about it for yourself in the YOURLS database (by default the title field is filled with the original filename and the alteration method)
   * Keep track of views/downloads via YOURLS´s history function
-  * Localization support (currently available: English, Spanish, German, more to come...)
+  * Localization support (currently: English, Spanish, German, Simplified Chinese, more to come with the help of volounteers...)
 
 Requirements
 ------------
@@ -54,6 +54,10 @@ Installation
 
   * Consider helping with translations.
 
+Bugs & Issues
+-------------
+No critical misbehaviour known, most issues are caused by configuration errors.
+Beware of scripts and plugins which validate URLs or intercept the data flow. Namely the plugin "Check URL" can interfere with this plugin, see [issue #11](https://github.com/fredl99/YOURLS-Upload-and-Shorten/issues/11).
 
 Localization (l10n)
 --------------------
