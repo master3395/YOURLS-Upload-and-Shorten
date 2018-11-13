@@ -57,7 +57,7 @@ Installation
 Bugs & Issues
 -------------
 No critical misbehaviour known, most issues are caused by configuration errors.
-Beware of scripts and plugins which validate URLs or intercept the data flow. Namely the plugin "Check URL" can interfere with this plugin, see [issue #11](https://github.com/fredl99/YOURLS-Upload-and-Shorten/issues/11).
+Beware of scripts and plugins which validate URLs or intercept the data flow. ~~Namely the plugin "Check URL" can interfere with this plugin,~~ This issue has been fixed for basic setups, see [issue #11](https://github.com/fredl99/YOURLS-Upload-and-Shorten/issues/11).  However, there might still occur interferences with plugins which check target URLs or manipulate the database by themselves. So, when you notice a strange behaviour always think about this and if you report an issue please include a list of installed and activated plugins.
 
 Localization (l10n)
 --------------------
