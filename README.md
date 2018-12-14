@@ -12,7 +12,7 @@ Features
   * Different ways to change the filename during the upload
   * Make a note about it for yourself in the YOURLS database (by default the title field is filled with the original filename and the alteration method)
   * Keep track of views/downloads via YOURLS´s history function
-  * Localization support (currently: English, Spanish, German, Simplified Chinese, more to come with the help of volounteers...)
+  * Localization support (currently: French, English, Spanish, German and Simplified Chinese. More translations provided by volounteers are greatly appreciated.)
 
 Requirements
 ------------
@@ -57,15 +57,16 @@ Installation
 Bugs & Issues
 -------------
 No critical misbehaviour known, most issues are caused by configuration errors.
-Beware of scripts and plugins which validate URLs or intercept the data flow. ~~Namely the plugin "Check URL" can interfere with this plugin,~~ This issue has been fixed for basic setups, see [issue #11](https://github.com/fredl99/YOURLS-Upload-and-Shorten/issues/11).  However, there might still occur interferences with plugins which check target URLs or manipulate the database by themselves. So, when you notice a strange behaviour always think about this and if you report an issue please include a list of installed and activated plugins.
+Beware of scripts and plugins which validate URLs or intercept the data flow. ~~Namely the plugin "Check URL" can interfere with this plugin,~~ (This issue has been fixed for basic setups, see [issue #11](https://github.com/fredl99/YOURLS-Upload-and-Shorten/issues/11).)  However, there might still occur interferences with plugins which check target URLs or manipulate the database by themselves. So, when you notice a strange behaviour always think about this and if you report an issue please include a list of installed and activated plugins.
 
 Localization (l10n)
 --------------------
 This plugin supports **localization** (translations into your language). 
 **For this to work you need at least YOURLS v1.7 from March 1, 2015**. It will basically work fine with earlier versions, except that translations won't work because of a minor bug in the YOURLS-code. Just upgrade to the latest YOURLS version and it will do. 
 
-Per default it talks English. Translation files for German, Spanish and Simplified Chinese are included in the folder `l10n/`. Remember to define your locale in `user/config.php` like this:  
+The default language is English. Translation files for French, German, Spanish and Simplified Chinese are included in the folder `l10n/`. To use this feature you just have to define your locale in `user/config.php` like this:  
 `define( 'YOURLS_LANG', 'de_DE' );`  
+(can be found within the standard YOURLS options there)
 
 Looking for translators
 -----------------------
@@ -75,7 +76,7 @@ Donations
 ---------
 There are many ways to integrate this plugin into your daily routines. The more you use it the more you will discover. The more you discover the more you will like it.  
 If you do, remember someone spends his time for improving it. If you want say thanks for that, just [buy him a coffee](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H5B9UKVYP88X4). That will certainly motivate him to make further enhancements. Just for You! ...  
-![](http://members.aon.at/localhost/uf.de/smiley_bier.gif) and him :)
+![](https://s.fredls.net/wjotnlsc1igvzq) and him :)
 
 License
 -------
