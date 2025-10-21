@@ -1,87 +1,267 @@
-YOURLS Plugin: Upload and Shorten
-=================================
+# 📤 YOURLS Upload and Shorten Plugin
 
-Plugin for [YOURLS](http://yourls.org) (version 1.7 or newer)
+[![YOURLS Version](https://img.shields.io/badge/YOURLS-1.7%2B-blue.svg)](http://yourls.org)
+[![PHP Version](https://img.shields.io/badge/PHP-7.4--8.6-green.svg)](https://php.net)
+[![License](https://img.shields.io/badge/License-Personal%20Use-orange.svg)](#license)
+[![Version](https://img.shields.io/badge/Version-2.0.0-brightgreen.svg)](#changelog)
 
-Description
------------
-This plugin lets you upload a file to your webserver and automagically creates a YOURLS short-URL for it. Then you can share that file by its short link as well as its full URL.
+> *Original Author: Fredl*
 
-Features
---------
-  * Different ways to change the filename during the upload
-  * Make a note about it for yourself in the YOURLS database (by default the title field is filled with the original filename and the alteration method)
-  * Keep track of views/downloads via YOURLS´s history function
-  * Localization support (currently: French, English, Spanish, German and Simplified Chinese. More translations provided by volounteers are greatly appreciated.)
+A powerful YOURLS plugin that allows you to upload files to your server and automatically create short URLs for them. Perfect for sharing files, documents, images, and more with clean, trackable links.
 
-Requirements
-------------
-What you need:
+## ✨ Features
 
-  * A webserver with PHP support
-  * A functional installation of [YOURLS](http://yourls.org)
-  * This Plugin ;-)
-  * A bit of understanding what it does and what you can do with it ;-)
+### 🚀 Core Functionality
+- **File Upload & Shortening**: Upload files and get instant short URLs
+- **Admin Panel Integration**: Full admin interface with settings management
+- **Frontend Upload Support**: Allow public users to upload files (configurable)
+- **File Management**: View, manage, and delete uploaded files
+- **Download Tracking**: Track file downloads through YOURLS analytics
 
-Installation
-------------
+### 🎛️ Admin Features
+- **Storage Location Management**: Configure where files are stored
+- **File Size Limits**: Set maximum file sizes for uploads
+- **File Type Restrictions**: Control allowed file extensions
+- **Retention Settings**: Configure automatic file cleanup
+- **Frontend Controls**: Enable/disable public uploads
 
-  * Navigate to the folder `./user/plugins/` inside your YOURLS-install directory
+### 🌐 Frontend Features
+- **Public Upload Interface**: Clean, responsive upload form
+- **Drag & Drop Support**: Modern file upload experience
+- **Progress Indicators**: Visual feedback during uploads
+- **Copy to Clipboard**: Easy URL sharing
+- **Mobile Responsive**: Works perfectly on all devices
 
-  * Use any of these two ways to install:
-    - **Either** clone this repo using `git`
-    - **or** create a new folder named ´Upload-and-Shorten´, then download all files from here *into that directory*. 
+### 🔒 Security & Performance
+- **CSRF Protection**: Secure form submissions
+- **File Validation**: MIME type and content validation
+- **Path Traversal Prevention**: Secure file handling
+- **Rate Limiting**: Prevent abuse
+- **Clean URL Support**: SEO-friendly URLs without .php extensions
 
-  * Prepare your configuration:
-    * If necessary create a directory where your files can be accessed from the webserver (i.e '/full/path/to/httpd/directory/')
-    * Depending on your webserver´s setup you may have to modify the permissions of that directory:  
-      - Make sure your webserver has read+write permissions for it. Explaining that is beyond the scope of this readme, please refer to the manual of your server, operating system or hosting provider. On a Linux box something like  
-       `chown :www-data /full/path/to/httpd/directory &&  chmod g+rwx /full/path/to/httpd/directory`  
-       should do the trick, but please don't rely on it.  
-       **A correct server configuration is important for its functionality, but essential for its safety!**
-    * Now open `./user/config.php` in your YOURLS-directory with any text editor and ...
-      - add these definition lines and save the file:  
-       `# Paths for plugin: "Upload-and-Shorten":`  
-       `# The web URL path where YOURLS short-links will redirect to:`  
-       `define( 'SHARE_URL', 'http://my.domain.tld/directory/' );`  
-       `# The physical path where the plugin drops your files into:`  
-       `define( 'SHARE_DIR', '/full/path/to/httpd/directory/' );` 
-       (Adjust paths to your needs...)
+## 📋 Requirements
 
-  * Go to the Plugins Administration Page (eg. `http://sho.rt/admin/plugins.php`) and activate the plugin.
+- **YOURLS**: Version 1.7 or newer (tested up to 1.10.2)
+- **PHP**: Version 7.4 or newer (tested up to 8.6)
+- **Web Server**: Apache/Nginx with mod_rewrite support
+- **Permissions**: Write access to upload directory
 
-  * Have fun!
+### ✅ Tested Environments
 
-  * Consider helping with translations.
+This plugin has been tested and verified to work on:
 
-Bugs & Issues
--------------
-No critical misbehaviour known, most issues are caused by configuration errors.
-Beware of scripts and plugins which validate URLs or intercept the data flow. ~~Namely the plugin "Check URL" can interfere with this plugin,~~ (This issue has been fixed for basic setups, see [issue #11](https://github.com/fredl99/YOURLS-Upload-and-Shorten/issues/11).)  However, there might still occur interferences with plugins which check target URLs or manipulate the database by themselves. So, when you notice a strange behaviour always think about this and if you report an issue please include a list of installed and activated plugins.
+| Operating System | Web Server | Control Panel | Status |
+|------------------|------------|---------------|---------|
+| **AlmaLinux 9.6** | OpenLiteSpeed | CyberPanel | ✅ Verified |
+| **AlmaLinux 9.6** | LiteSpeed Enterprise | CyberPanel | ✅ Verified |
+| **AlmaLinux 10** | OpenLiteSpeed | CyberPanel | ✅ Verified |
+| **AlmaLinux 10** | LiteSpeed Enterprise | CyberPanel | ✅ Verified |
 
-Localization (l10n)
---------------------
-This plugin supports **localization** (translations into your language). 
-**For this to work you need at least YOURLS v1.7 from March 1, 2015**. It will basically work fine with earlier versions, except that translations won't work because of a minor bug in the YOURLS-code. Just upgrade to the latest YOURLS version and it will do. 
+> **Note**: The plugin is fully compatible with both OpenLiteSpeed and LiteSpeed Enterprise through CyberPanel, providing seamless integration with your hosting environment.
 
-The default language is English. Translation files for French, German, Spanish and Simplified Chinese are included in the folder `l10n/`. To use this feature you just have to define your locale in `user/config.php` like this:  
-`define( 'YOURLS_LANG', 'de_DE' );`  
-(can be found within the standard YOURLS options there)
+## 🚀 Installation
 
-Looking for translators
------------------------
-If you're willing to provide translations, please [read this](http://blog.yourls.org/2013/02/workshop-how-to-create-your-own-translation-file-for-yourls/). If necessary you can contact me for further instructions. Any help is  appreciated, at most by your fellow countrymen!
+### 1. Download the Plugin
+```bash
+# Navigate to your YOURLS plugins directory
+cd /path/to/yourls/user/plugins/
 
-Donations
----------
-There are many ways to integrate this plugin into your daily routines. The more you use it the more you will discover. The more you discover the more you will like it.  
-If you do, remember someone spends his time for improving it. If you want say thanks for that, just [buy him a coffee](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H5B9UKVYP88X4). That will certainly motivate him to make further enhancements. Just for You! ...  
-![](https://s.fredls.net/wjotnlsc1igvzq) and him :)
+# Clone the plugin
+git clone https://github.com/newstargeted/YOURLS-Upload-and-Shorten.git YOURLS-Upload-and-Shorten-master
+```
 
-License
--------
+### 2. Set Permissions
+```bash
+# Set proper ownership and permissions
+chown -R yourls_user:yourls_group YOURLS-Upload-and-Shorten-master/
+chmod -R 755 YOURLS-Upload-and-Shorten-master/
+chmod 777 YOURLS-Upload-and-Shorten-master/uploads/
+```
+
+### 3. Activate the Plugin
+1. Go to your YOURLS admin panel: `https://yourls.example.com/admin/plugins.php`
+2. Find "Upload and Shorten" in the plugin list
+3. Click "Activate"
+4. The plugin will automatically create necessary database tables
+
+### 4. Configure Settings
+1. Navigate to **Upload Settings** in the admin panel
+2. Configure your preferred settings:
+   - Max file size
+   - Allowed file types
+   - Storage location
+   - Frontend upload settings
+3. Save your configuration
+
+## ⚙️ Configuration
+
+### Admin Settings
+
+Access the settings via: **Admin Panel → Plugins → Upload Settings**
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| **Max File Size** | Maximum file size for uploads | 10 MB |
+| **Allowed File Types** | Comma-separated list of allowed extensions | jpg,jpeg,png,gif,pdf,doc,docx,txt,zip |
+| **File Retention** | How long to keep files before deletion | Never |
+| **Storage Location** | Directory where files are stored | `/uploads/` |
+| **Frontend Uploads** | Allow public users to upload files | Disabled |
+| **Frontend Max Size** | Maximum file size for frontend uploads | 5 MB |
+| **Frontend File Types** | Allowed file types for frontend uploads | jpg,jpeg,png,gif,pdf,txt |
+
+### File Storage
+
+Files are stored in the web-accessible `/uploads/` directory by default. The plugin automatically:
+- Creates the upload directory if it doesn't exist
+- Sets proper permissions
+- Generates unique filenames to prevent conflicts
+- Stores file metadata in the database
+
+## 🎯 Usage
+
+### Admin Upload
+1. Go to **Admin Panel → Upload & Shorten**
+2. Select a file from your computer
+3. Click "Upload & Shorten"
+4. Get your short URL instantly
+
+### Frontend Upload (if enabled)
+1. Visit your YOURLS frontend
+2. Use the "Upload & Shorten File" section
+3. Select a file and click "Upload & Shorten"
+4. Copy the generated short URL
+
+### File Management
+- View all uploaded files in **Admin Panel → Uploaded Files**
+- Delete files individually or in bulk
+- Monitor download statistics
+- Manage file retention settings
+
+## 🌍 Internationalization
+
+The plugin supports multiple languages:
+
+| Language | Code | Status |
+|----------|------|--------|
+| English | `en_US` | ✅ Complete |
+| German | `de_DE` | ✅ Complete |
+| French | `fr_FR` | ✅ Complete |
+| Spanish | `es_ES` | ✅ Complete |
+| Chinese (Simplified) | `zh_CN` | ✅ Complete |
+| Norwegian (Bokmål) | `nb_NO` | ✅ Complete |
+
+To use a specific language, add this to your `user/config.php`:
+```php
+define('YOURLS_LANG', 'de_DE'); // Replace with your preferred language code
+```
+
+## 🔧 Advanced Configuration
+
+### Custom Storage Location
+You can customize where files are stored by modifying the storage location in the admin settings. The path should be:
+- **Web-accessible**: Files need to be accessible via HTTP
+- **Writable**: The web server must have write permissions
+- **Secure**: Outside the web root for security (recommended)
+
+### File Retention Policies
+Configure automatic file cleanup:
+- **Never**: Keep files indefinitely
+- **24 Hours**: Delete after 1 day
+- **7 Days**: Delete after 1 week
+- **31 Days**: Delete after 1 month
+- **90 Days**: Delete after 3 months
+- **Custom**: Set your own retention period
+
+### Security Considerations
+- Files are validated for type and content
+- Path traversal attacks are prevented
+- CSRF protection is enabled
+- Rate limiting prevents abuse
+- Upload directory is protected with .htaccess
+
+### CyberPanel & LiteSpeed Compatibility
+The plugin includes .htaccess rules that are fully compatible with:
+- **OpenLiteSpeed**: Standard Apache-compatible directives
+- **LiteSpeed Enterprise**: Enhanced with optional LiteSpeed-specific optimizations
+- **CyberPanel**: Seamless integration with CyberPanel's file management
+- **AlmaLinux**: Tested and optimized for AlmaLinux 9.6 and 10
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**File uploads not working:**
+- Check directory permissions (should be 755 for directories, 644 for files)
+- Verify upload directory exists and is writable
+- Check PHP upload limits in php.ini
+
+**Short URLs not redirecting:**
+- Ensure the upload directory is web-accessible
+- Check that files are being moved to the correct location
+- Verify .htaccess rules are working
+
+**Frontend uploads not showing:**
+- Check that "Enable Frontend Uploads" is set to "Yes" in admin settings
+- Verify the custom frontend is loading the plugin correctly
+- Check for PHP errors in the error log
+
+### Debug Mode
+Enable debug mode by adding this to your `user/config.php`:
+```php
+define('YOURLS_DEBUG', true);
+```
+
+## 📊 Changelog
+
+### Version 2.0.0 (Current)
+- ✨ **Major Enhancement**: Complete rewrite and modernization
+- 🎛️ **Admin Interface**: Full admin panel with settings management
+- 🌐 **Frontend Support**: Public upload interface for custom themes
+- 🔒 **Security**: Enhanced security with CSRF protection and validation
+- 📱 **Mobile**: Fully responsive design
+- 🌍 **i18n**: Norwegian Bokmål translation added
+- 🧹 **Code Quality**: Modular structure, under 500 lines per file
+- ⚡ **Performance**: Optimized database queries and file handling
+
+### Version 1.x (Original)
+- Basic file upload and shortening functionality
+- Admin panel integration
+- Multiple language support
+- File management features
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+1. **Report Bugs**: Use the issue tracker to report problems
+2. **Suggest Features**: Propose new functionality
+3. **Translate**: Help with language translations
+4. **Code**: Submit pull requests for improvements
+5. **Documentation**: Improve documentation and examples
+
+## 📄 License
+
 **Free for personal use only.**  
-If you want to make money with it you have to contact me first.  
 
-Thanks for your attention.
+Commercial use requires permission. Contact us for licensing information.
 
+## 🙏 Credits
+
+- **Original Author**: [fredl99](https://github.com/fredl99/YOURLS-Upload-and-Shorten)
+- **Enhanced by**: [News Targeted](https://newstargeted.com)
+- **Original Repository**: [fredl99/YOURLS-Upload-and-Shorten](https://github.com/fredl99/YOURLS-Upload-and-Shorten)
+
+## 📞 Support
+
+- **Original Plugin**: [fredl99/YOURLS-Upload-and-Shorten](https://github.com/fredl99/YOURLS-Upload-and-Shorten)
+- **Issues & Support**: [Contact fredl99](https://github.com/fredl99/YOURLS-Upload-and-Shorten)
+- **Enhanced Version**: [News Targeted](https://newstargeted.com/contact)
+
+---
+
+<div align="center">
+
+
+[![News Targeted](https://img.shields.io/badge/News%20Targeted-Professional%20Services-red.svg)](https://newstargeted.com)
+
+</div>
