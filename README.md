@@ -1,69 +1,94 @@
-# 📤 YOURLS Upload and Shorten Plugin
+# Upload and Shorten Advanced Plugin for YOURLS
 
-[![YOURLS Version](https://img.shields.io/badge/YOURLS-1.7%2B-blue.svg)](http://yourls.org)
-[![PHP Version](https://img.shields.io/badge/PHP-7.4--8.6-green.svg)](https://php.net)
-[![License](https://img.shields.io/badge/License-Personal%20Use-orange.svg)](#license)
-[![Version](https://img.shields.io/badge/Version-2.0.0-brightgreen.svg)](#changelog)
+[![Listed in Awesome YOURLS!](https://img.shields.io/badge/Awesome-YOURLS-C5A3BE)](https://github.com/YOURLS/awesome)
 
-> *Original Author: Fredl*
+**Version:** 2.0.0
+**Enhanced by:** Master3395 / News Targeted
+**YOURLS Compatibility:** 1.7+ (Tested with YOURLS 1.10.2)
 
 A powerful YOURLS plugin that allows you to upload files to your server and automatically create short URLs for them. Perfect for sharing files, documents, images, and more with clean, trackable links.
 
-## ✨ Features
+## Quick Start
 
-### 🚀 Core Functionality
+### Installation
 
-- **File Upload & Shortening**: Upload files and get instant short URLs
-- **Admin Panel Integration**: Full admin interface with settings management
-- **Frontend Upload Support**: Allow public users to upload files (configurable)
-- **File Management**: View, manage, and delete uploaded files
-- **Download Tracking**: Track file downloads through YOURLS analytics
+1. Upload the plugin folder to `/user/plugins/YOURLS-Upload-and-Shorten-Advanced/`
+2. Activate the plugin in your YOURLS admin panel
+3. Configure settings in "Upload Settings" page
+4. Start uploading files!
 
-### 🎛️ Admin Features
+### Basic Setup
 
-- **Storage Location Management**: Configure where files are stored
-- **File Size Limits**: Set maximum file sizes for uploads
-- **File Type Restrictions**: Control allowed file extensions
-- **Retention Settings**: Configure automatic file cleanup
-- **Frontend Controls**: Enable/disable public uploads
+1. Set maximum file size (default: 10 MB)
+2. Configure allowed file types
+3. Choose storage location
+4. Enable frontend uploads (optional)
+5. Save and test!
 
-### 🌐 Frontend Features
+## Key Features
 
-- **Public Upload Interface**: Clean, responsive upload form
-- **Drag & Drop Support**: Modern file upload experience
-- **Progress Indicators**: Visual feedback during uploads
-- **Copy to Clipboard**: Easy URL sharing
-- **Mobile Responsive**: Works perfectly on all devices
+- **File Upload & Shortening** - Upload files and get instant short URLs
+- **Admin Panel Integration** - Full admin interface with settings management
+- **Frontend Upload Support** - Allow public users to upload files (configurable)
+- **Multiple Storage Locations** - Configure different storage paths for various needs
+- **File Expiration** - Set automatic file cleanup with customizable retention periods
+- **Download Tracking** - Track file downloads through YOURLS analytics
+- **Advanced Security** - CSRF protection, MIME validation, path traversal prevention, rate limiting
+- **Mobile-First Design** - Fully responsive and optimized for all devices
+- **Drag & Drop Support** - Modern file upload experience with progress indicators
+- **Multi-Language Support** - Available in English, German, French, Spanish, Chinese, and Norwegian
 
-### 🔒 Security & Performance
+## Features Overview
 
-- **CSRF Protection**: Secure form submissions
-- **File Validation**: MIME type and content validation
-- **Path Traversal Prevention**: Secure file handling
-- **Rate Limiting**: Prevent abuse
-- **Clean URL Support**: SEO-friendly URLs without .php extensions
+### Core Functionality
 
-## 📋 Requirements
+- Upload files and get instant short URLs
+- Full admin interface with settings management
+- Public upload interface (configurable)
+- View, manage, and delete uploaded files
+- Track file downloads through YOURLS analytics
 
-- **YOURLS**: Version 1.7 or newer (tested up to 1.10.2)
-- **PHP**: Version 7.4 or newer (tested up to 8.6)
-- **Web Server**: Apache/Nginx with mod_rewrite support
-- **Permissions**: Write access to upload directory
+### Admin Features
 
-### ✅ Tested Environments
+- Configure multiple storage locations
+- Set maximum file sizes for uploads
+- Control allowed file extensions
+- Configure automatic file cleanup
+- Enable/disable public uploads
+- Bulk file management
+- Pagination for large file lists
+- Advanced filtering and search
 
-This plugin has been tested and verified to work on:
+### Frontend Features
 
-| Operating System        | Web Server           | Control Panel | Status      |
-| ----------------------- | -------------------- | ------------- | ----------- |
-| **AlmaLinux 9.6** | OpenLiteSpeed        | CyberPanel    | ✅ Verified |
-| **AlmaLinux 9.6** | LiteSpeed Enterprise | CyberPanel    | ✅ Verified |
-| **AlmaLinux 10**  | OpenLiteSpeed        | CyberPanel    | ✅ Verified |
-| **AlmaLinux 10**  | LiteSpeed Enterprise | CyberPanel    | ✅ Verified |
+- Clean, responsive upload form
+- Drag & drop file upload
+- Real-time progress indicators
+- Copy to clipboard functionality
+- Mobile responsive design
+- Custom upload messages
+- Rate limiting per IP
 
-> **Note**: The plugin is fully compatible with both OpenLiteSpeed and LiteSpeed Enterprise through CyberPanel, providing seamless integration with your hosting environment.
+### Security & Performance
 
-## 🚀 Installation
+- CSRF protection for secure form submissions
+- MIME type and content validation
+- Path traversal prevention
+- Rate limiting to prevent abuse
+- Clean URL support (SEO-friendly)
+- Modular code structure (under 500 lines per file)
+- Optimized database queries
+
+## Documentation
+
+- [Installation Guide](#installation)
+- [Configuration Guide](#configuration)
+- [Usage Guide](#usage)
+- [Internationalization](#internationalization)
+- [Troubleshooting](#troubleshooting)
+- [Changelog](#changelog)
+
+## Installation
 
 ### 1. Download the Plugin
 
@@ -72,36 +97,32 @@ This plugin has been tested and verified to work on:
 cd /path/to/yourls/user/plugins/
 
 # Clone the plugin
-git clone https://github.com/newstargeted/YOURLS-Upload-and-Shorten.git YOURLS-Upload-and-Shorten-master
+git clone https://github.com/master3395/YOURLS-Upload-and-Shorten-Advanced.git
 ```
 
 ### 2. Set Permissions
 
 ```bash
 # Set proper ownership and permissions
-chown -R yourls_user:yourls_group YOURLS-Upload-and-Shorten-master/
-chmod -R 755 YOURLS-Upload-and-Shorten-master/
-chmod 777 YOURLS-Upload-and-Shorten-master/uploads/
+chown -R yourls_user:yourls_group YOURLS-Upload-and-Shorten-Advanced/
+chmod -R 755 YOURLS-Upload-and-Shorten-Advanced/
+chmod 777 YOURLS-Upload-and-Shorten-Advanced/uploads/
 ```
 
 ### 3. Activate the Plugin
 
 1. Go to your YOURLS admin panel: `https://yourls.example.com/admin/plugins.php`
-2. Find "Upload and Shorten" in the plugin list
+2. Find "Upload & Shorten" in the plugin list
 3. Click "Activate"
 4. The plugin will automatically create necessary database tables
 
 ### 4. Configure Settings
 
 1. Navigate to **Upload Settings** in the admin panel
-2. Configure your preferred settings:
-   - Max file size
-   - Allowed file types
-   - Storage location
-   - Frontend upload settings
+2. Configure your preferred settings (max file size, allowed file types, storage location, frontend upload settings)
 3. Save your configuration
 
-## ⚙️ Configuration
+## Configuration
 
 ### Admin Settings
 
@@ -117,50 +138,77 @@ Access the settings via: **Admin Panel → Plugins → Upload Settings**
 | **Frontend Max Size**   | Maximum file size for frontend uploads     | 5 MB                                  |
 | **Frontend File Types** | Allowed file types for frontend uploads    | jpg,jpeg,png,gif,pdf,txt              |
 
-### File Storage
+### Storage Locations
 
-Files are stored in the web-accessible `/uploads/` directory by default. The plugin automatically:
+The plugin supports multiple storage locations:
 
-- Creates the upload directory if it doesn't exist
-- Sets proper permissions
-- Generates unique filenames to prevent conflicts
-- Stores file metadata in the database
+- Configure different paths for different file types
+- Set per-location size limits
+- Enable/disable locations individually
+- Monitor storage statistics per location
+- Test storage location accessibility
 
-## 🎯 Usage
+### File Expiration Settings
+
+Configure automatic file cleanup:
+
+- **Never** - Keep files indefinitely
+- **24 Hours** - Delete after 1 day
+- **7 Days** - Delete after 1 week
+- **31 Days** - Delete after 1 month
+- **90 Days** - Delete after 3 months
+- **Custom** - Set your own retention period
+
+### Security Features
+
+- Files are validated for type and content
+- Path traversal attacks are prevented
+- CSRF protection is enabled
+- Rate limiting prevents abuse
+- Upload directory is protected with .htaccess
+- Dangerous file extensions are blocked
+- Content scanning for malicious code
+
+## Usage
 
 ### Admin Upload
 
 1. Go to **Admin Panel → Upload & Shorten**
 2. Select a file from your computer
-3. Click "Upload & Shorten"
-4. Get your short URL instantly
+3. Optionally customize short URL and title
+4. Choose storage location and expiration
+5. Click "Upload & Create Short URL"
+6. Get your short URL instantly
 
 ### Frontend Upload (if enabled)
 
 1. Visit your YOURLS frontend
 2. Use the "Upload & Shorten File" section
-3. Select a file and click "Upload & Shorten"
-4. Copy the generated short URL
+3. Select a file and configure options
+4. Click "Upload & Shorten"
+5. Copy the generated short URL
 
 ### File Management
 
 - View all uploaded files in **Admin Panel → Uploaded Files**
+- Filter files by type, expiration status, or search
 - Delete files individually or in bulk
+- Extend file expiration periods
 - Monitor download statistics
-- Manage file retention settings
+- View file details and metadata
 
-## 🌍 Internationalization
+## Internationalization
 
 The plugin supports multiple languages:
 
-| Language             | Code      | Status      |
-| -------------------- | --------- | ----------- |
-| English              | `en_US` | ✅ Complete |
-| German               | `de_DE` | ✅ Complete |
-| French               | `fr_FR` | ✅ Complete |
-| Spanish              | `es_ES` | ✅ Complete |
-| Chinese (Simplified) | `zh_CN` | ✅ Complete |
-| Norwegian (Bokmål)  | `nb_NO` | ✅ Complete |
+| Language             | Code      | Status      | Contributor      |
+| -------------------- | --------- | ----------- | ---------------- |
+| English              | `en_US` | ✅ Complete | Built-in         |
+| German               | `de_DE` | ✅ Complete | Fredl            |
+| French               | `fr_FR` | ✅ Complete | Alfonso Vivancos |
+| Spanish              | `es_ES` | ✅ Complete | Alfonso Vivancos |
+| Chinese (Simplified) | `zh_CN` | ✅ Complete | Mo Lun           |
+| Norwegian (Bokmål)  | `nb_NO` | ✅ Complete | Master3395       |
 
 To use a specific language, add this to your `user/config.php`:
 
@@ -168,45 +216,52 @@ To use a specific language, add this to your `user/config.php`:
 define('YOURLS_LANG', 'de_DE'); // Replace with your preferred language code
 ```
 
-## 🔧 Advanced Configuration
+## Advanced Configuration
 
 ### Custom Storage Location
 
 You can customize where files are stored by modifying the storage location in the admin settings. The path should be:
 
-- **Web-accessible**: Files need to be accessible via HTTP
-- **Writable**: The web server must have write permissions
-- **Secure**: Outside the web root for security (recommended)
+- **Web-accessible** - Files need to be accessible via HTTP
+- **Writable** - The web server must have write permissions
+- **Secure** - Protected with .htaccess to prevent PHP execution
 
-### File Retention Policies
+### Rate Limiting
 
-Configure automatic file cleanup:
+Configure rate limits to prevent abuse:
 
-- **Never**: Keep files indefinitely
-- **24 Hours**: Delete after 1 day
-- **7 Days**: Delete after 1 week
-- **31 Days**: Delete after 1 month
-- **90 Days**: Delete after 3 months
-- **Custom**: Set your own retention period
+- Set uploads per hour limit
+- Per-IP address tracking
+- Automatic cleanup of old rate limit data
 
-### Security Considerations
+### File Validation
 
-- Files are validated for type and content
-- Path traversal attacks are prevented
-- CSRF protection is enabled
-- Rate limiting prevents abuse
-- Upload directory is protected with .htaccess
+The plugin validates files on multiple levels:
+
+- File extension checking
+- MIME type validation
+- Content scanning for malicious code
+- Size limit enforcement
+- Dangerous extension blocking
+
+## Compatibility
+
+- **YOURLS:** 1.7+
+- **PHP:** 7.4 - 8.6
+- **Web Servers:** Apache, Nginx, OpenLiteSpeed, LiteSpeed Enterprise
+- **Control Panels:** CyberPanel, cPanel, Plesk
+- **Tested:** YOURLS 1.10.2 on AlmaLinux 9.6 & 10 with OpenLiteSpeed and LiteSpeed Enterprise
 
 ### CyberPanel & LiteSpeed Compatibility
 
 The plugin includes .htaccess rules that are fully compatible with:
 
-- **OpenLiteSpeed**: Standard Apache-compatible directives
-- **LiteSpeed Enterprise**: Enhanced with optional LiteSpeed-specific optimizations
-- **CyberPanel**: Seamless integration with CyberPanel's file management
-- **AlmaLinux**: Tested and optimized for AlmaLinux 9.6 and 10
+- **OpenLiteSpeed** - Standard Apache-compatible directives
+- **LiteSpeed Enterprise** - Enhanced with optional LiteSpeed-specific optimizations
+- **CyberPanel** - Seamless integration with CyberPanel's file management
+- **AlmaLinux** - Tested and optimized for AlmaLinux 9.6 and 10
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -214,19 +269,28 @@ The plugin includes .htaccess rules that are fully compatible with:
 
 - Check directory permissions (should be 755 for directories, 644 for files)
 - Verify upload directory exists and is writable
-- Check PHP upload limits in php.ini
+- Check PHP upload limits in php.ini (`upload_max_filesize`, `post_max_size`)
+- Ensure database tables were created during activation
 
 **Short URLs not redirecting:**
 
 - Ensure the upload directory is web-accessible
 - Check that files are being moved to the correct location
 - Verify .htaccess rules are working
+- Check YOURLS URL rewriting is configured correctly
 
 **Frontend uploads not showing:**
 
 - Check that "Enable Frontend Uploads" is set to "Yes" in admin settings
-- Verify the custom frontend is loading the plugin correctly
+- Verify the frontend theme is compatible
+- Check for JavaScript errors in browser console
 - Check for PHP errors in the error log
+
+**Database errors:**
+
+- Verify database tables exist (`yourls_upload_files`, `yourls_upload_settings`)
+- Check database user has CREATE and INSERT permissions
+- Run the activation function again to create missing tables
 
 ### Debug Mode
 
@@ -234,57 +298,66 @@ Enable debug mode by adding this to your `user/config.php`:
 
 ```php
 define('YOURLS_DEBUG', true);
+define('UPLOAD_DEBUG', true); // Plugin-specific debugging
 ```
 
-## 📊 Changelog
+Check the log file at: `user/logs/upload-plugin.log`
+
+## Changelog
 
 ### Version 2.0.0 (Current)
 
-- ✨ **Major Enhancement**: Complete rewrite and modernization
-- 🎛️ **Admin Interface**: Full admin panel with settings management
-- 🌐 **Frontend Support**: Public upload interface for custom themes
-- 🔒 **Security**: Enhanced security with CSRF protection and validation
-- 📱 **Mobile**: Fully responsive design
-- 🌍 **i18n**: Norwegian Bokmål translation added
-- 🧹 **Code Quality**: Modular structure, under 500 lines per file
-- ⚡ **Performance**: Optimized database queries and file handling
+- **Major Enhancement** - Complete rewrite and modernization
+- **Admin Interface** - Full admin panel with settings management
+- **Frontend Support** - Public upload interface for custom themes
+- **Multiple Storage** - Support for multiple storage locations
+- **File Expiration** - Automatic cleanup with configurable retention
+- **Security** - Enhanced security with CSRF protection and validation
+- **Mobile** - Fully responsive design
+- **i18n** - Norwegian Bokmål translation added
+- **Code Quality** - Modular structure, under 500 lines per file
+- **Performance** - Optimized database queries and file handling
+- **Bulk Operations** - Manage multiple files at once
+- **Advanced Filtering** - Filter files by type, expiration, and search
 
 ### Version 1.x (Original)
 
 - Basic file upload and shortening functionality
 - Admin panel integration
-- Multiple language support
+- Multiple language support (German, French, Spanish, Chinese)
 - File management features
 
-## 🤝 Contributing
+## Support & Contribution
+
+- **Issues:** [GitHub Issues](https://github.com/master3395/YOURLS-Upload-and-Shorten-Advanced/issues)
+- **Website:** [newstargeted.com](https://newstargeted.com)
+- **Email:** info@newstargeted.com
+
+### Contributing
 
 We welcome contributions! Here's how you can help:
 
-1. **Report Bugs**: Use the issue tracker to report problems
-2. **Suggest Features**: Propose new functionality
-3. **Translate**: Help with language translations
-4. **Code**: Submit pull requests for improvements
-5. **Documentation**: Improve documentation and examples
+1. **Report Bugs** - Use the issue tracker to report problems
+2. **Suggest Features** - Propose new functionality
+3. **Translate** - Help with language translations
+4. **Code** - Submit pull requests for improvements
+5. **Documentation** - Improve documentation and examples
 
-## 📄 License
+## Author
 
-**Free for personal use only.**
+**Master3395 / News Targeted**
 
-Commercial use requires permission. Contact us for licensing information.
+- Website: [newstargeted.com](https://newstargeted.com/)
+- Email: info@newstargeted.com
+- GitHub: [@master3395](https://github.com/master3395)
 
-## 🙏 Credits
+## Credits
 
-- **Original Author**: [fredl99](https://github.com/fredl99/YOURLS-Upload-and-Shorten)
-- **Enhanced by**: [News Targeted](https://newstargeted.com)
-- **Original Repository**: [fredl99/YOURLS-Upload-and-Shorten](https://github.com/fredl99/YOURLS-Upload-and-Shorten)
-
-## 📞 Support
-
-- **Original Plugin**: [fredl99/YOURLS-Upload-and-Shorten](https://github.com/fredl99/YOURLS-Upload-and-Shorten)
-- **Issues & Support**: [Contact fredl99](https://github.com/fredl99/YOURLS-Upload-and-Shorten)
-- **Enhanced Version**: [News Targeted](https://newstargeted.com/contact)
-
----
-
-<div align="center">
-</div>
+- **Original Author**: [mtttmpl](https://github.com/mtttmpl/YOURLS-Plugin--Share-Files) - Creator of the original Share Files plugin
+- **Fork Contributors**: [adammatthews](https://github.com/adammatthews/YOURLS-Plugin--Share-Files), [fredl99](https://github.com/fredl99/YOURLS-Upload-and-Shorten)
+- **Latest Enhanced Version**: [News Targeted](https://newstargeted.com) - Most updated and feature-rich version
+- **Development Lineage**:
+  - Original → [mtttmpl/YOURLS-Plugin--Share-Files](https://github.com/mtttmpl/YOURLS-Plugin--Share-Files)
+  - Fork → [adammatthews/YOURLS-Plugin--Share-Files](https://github.com/adammatthews/YOURLS-Plugin--Share-Files)
+  - Fork → [fredl99/YOURLS-Upload-and-Shorten](https://github.com/fredl99/YOURLS-Upload-and-Shorten)
+  - **Enhanced → News Targeted (This Version)**
