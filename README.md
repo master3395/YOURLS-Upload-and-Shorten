@@ -3,7 +3,6 @@
 [![Listed in Awesome YOURLS!](https://img.shields.io/badge/Awesome-YOURLS-C5A3BE)](https://github.com/YOURLS/awesome)
 [![YOURLS Version](https://img.shields.io/badge/YOURLS-1.7%2B-blue.svg)](http://yourls.org)
 [![PHP Version](https://img.shields.io/badge/PHP-7.4--8.6-green.svg)](https://php.net)
-[![License](https://img.shields.io/badge/License-Personal%20Use-orange.svg)](#license)
 [![Version](https://img.shields.io/badge/Version-2.0.0-brightgreen.svg)](#changelog)
 
 **Version:** 2.0.0
