@@ -12,6 +12,7 @@ A powerful YOURLS plugin that allows you to upload files to your server and auto
 ## ✨ Features
 
 ### 🚀 Core Functionality
+
 - **File Upload & Shortening**: Upload files and get instant short URLs
 - **Admin Panel Integration**: Full admin interface with settings management
 - **Frontend Upload Support**: Allow public users to upload files (configurable)
@@ -19,6 +20,7 @@ A powerful YOURLS plugin that allows you to upload files to your server and auto
 - **Download Tracking**: Track file downloads through YOURLS analytics
 
 ### 🎛️ Admin Features
+
 - **Storage Location Management**: Configure where files are stored
 - **File Size Limits**: Set maximum file sizes for uploads
 - **File Type Restrictions**: Control allowed file extensions
@@ -26,6 +28,7 @@ A powerful YOURLS plugin that allows you to upload files to your server and auto
 - **Frontend Controls**: Enable/disable public uploads
 
 ### 🌐 Frontend Features
+
 - **Public Upload Interface**: Clean, responsive upload form
 - **Drag & Drop Support**: Modern file upload experience
 - **Progress Indicators**: Visual feedback during uploads
@@ -33,6 +36,7 @@ A powerful YOURLS plugin that allows you to upload files to your server and auto
 - **Mobile Responsive**: Works perfectly on all devices
 
 ### 🔒 Security & Performance
+
 - **CSRF Protection**: Secure form submissions
 - **File Validation**: MIME type and content validation
 - **Path Traversal Prevention**: Secure file handling
@@ -50,18 +54,19 @@ A powerful YOURLS plugin that allows you to upload files to your server and auto
 
 This plugin has been tested and verified to work on:
 
-| Operating System | Web Server | Control Panel | Status |
-|------------------|------------|---------------|---------|
-| **AlmaLinux 9.6** | OpenLiteSpeed | CyberPanel | ✅ Verified |
-| **AlmaLinux 9.6** | LiteSpeed Enterprise | CyberPanel | ✅ Verified |
-| **AlmaLinux 10** | OpenLiteSpeed | CyberPanel | ✅ Verified |
-| **AlmaLinux 10** | LiteSpeed Enterprise | CyberPanel | ✅ Verified |
+| Operating System        | Web Server           | Control Panel | Status      |
+| ----------------------- | -------------------- | ------------- | ----------- |
+| **AlmaLinux 9.6** | OpenLiteSpeed        | CyberPanel    | ✅ Verified |
+| **AlmaLinux 9.6** | LiteSpeed Enterprise | CyberPanel    | ✅ Verified |
+| **AlmaLinux 10**  | OpenLiteSpeed        | CyberPanel    | ✅ Verified |
+| **AlmaLinux 10**  | LiteSpeed Enterprise | CyberPanel    | ✅ Verified |
 
 > **Note**: The plugin is fully compatible with both OpenLiteSpeed and LiteSpeed Enterprise through CyberPanel, providing seamless integration with your hosting environment.
 
 ## 🚀 Installation
 
 ### 1. Download the Plugin
+
 ```bash
 # Navigate to your YOURLS plugins directory
 cd /path/to/yourls/user/plugins/
@@ -71,6 +76,7 @@ git clone https://github.com/newstargeted/YOURLS-Upload-and-Shorten.git YOURLS-U
 ```
 
 ### 2. Set Permissions
+
 ```bash
 # Set proper ownership and permissions
 chown -R yourls_user:yourls_group YOURLS-Upload-and-Shorten-master/
@@ -79,12 +85,14 @@ chmod 777 YOURLS-Upload-and-Shorten-master/uploads/
 ```
 
 ### 3. Activate the Plugin
+
 1. Go to your YOURLS admin panel: `https://yourls.example.com/admin/plugins.php`
 2. Find "Upload and Shorten" in the plugin list
 3. Click "Activate"
 4. The plugin will automatically create necessary database tables
 
 ### 4. Configure Settings
+
 1. Navigate to **Upload Settings** in the admin panel
 2. Configure your preferred settings:
    - Max file size
@@ -99,19 +107,20 @@ chmod 777 YOURLS-Upload-and-Shorten-master/uploads/
 
 Access the settings via: **Admin Panel → Plugins → Upload Settings**
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| **Max File Size** | Maximum file size for uploads | 10 MB |
-| **Allowed File Types** | Comma-separated list of allowed extensions | jpg,jpeg,png,gif,pdf,doc,docx,txt,zip |
-| **File Retention** | How long to keep files before deletion | Never |
-| **Storage Location** | Directory where files are stored | `/uploads/` |
-| **Frontend Uploads** | Allow public users to upload files | Disabled |
-| **Frontend Max Size** | Maximum file size for frontend uploads | 5 MB |
-| **Frontend File Types** | Allowed file types for frontend uploads | jpg,jpeg,png,gif,pdf,txt |
+| Setting                       | Description                                | Default                               |
+| ----------------------------- | ------------------------------------------ | ------------------------------------- |
+| **Max File Size**       | Maximum file size for uploads              | 10 MB                                 |
+| **Allowed File Types**  | Comma-separated list of allowed extensions | jpg,jpeg,png,gif,pdf,doc,docx,txt,zip |
+| **File Retention**      | How long to keep files before deletion     | Never                                 |
+| **Storage Location**    | Directory where files are stored           | `/uploads/`                         |
+| **Frontend Uploads**    | Allow public users to upload files         | Disabled                              |
+| **Frontend Max Size**   | Maximum file size for frontend uploads     | 5 MB                                  |
+| **Frontend File Types** | Allowed file types for frontend uploads    | jpg,jpeg,png,gif,pdf,txt              |
 
 ### File Storage
 
 Files are stored in the web-accessible `/uploads/` directory by default. The plugin automatically:
+
 - Creates the upload directory if it doesn't exist
 - Sets proper permissions
 - Generates unique filenames to prevent conflicts
@@ -120,18 +129,21 @@ Files are stored in the web-accessible `/uploads/` directory by default. The plu
 ## 🎯 Usage
 
 ### Admin Upload
+
 1. Go to **Admin Panel → Upload & Shorten**
 2. Select a file from your computer
 3. Click "Upload & Shorten"
 4. Get your short URL instantly
 
 ### Frontend Upload (if enabled)
+
 1. Visit your YOURLS frontend
 2. Use the "Upload & Shorten File" section
 3. Select a file and click "Upload & Shorten"
 4. Copy the generated short URL
 
 ### File Management
+
 - View all uploaded files in **Admin Panel → Uploaded Files**
 - Delete files individually or in bulk
 - Monitor download statistics
@@ -141,16 +153,17 @@ Files are stored in the web-accessible `/uploads/` directory by default. The plu
 
 The plugin supports multiple languages:
 
-| Language | Code | Status |
-|----------|------|--------|
-| English | `en_US` | ✅ Complete |
-| German | `de_DE` | ✅ Complete |
-| French | `fr_FR` | ✅ Complete |
-| Spanish | `es_ES` | ✅ Complete |
+| Language             | Code      | Status      |
+| -------------------- | --------- | ----------- |
+| English              | `en_US` | ✅ Complete |
+| German               | `de_DE` | ✅ Complete |
+| French               | `fr_FR` | ✅ Complete |
+| Spanish              | `es_ES` | ✅ Complete |
 | Chinese (Simplified) | `zh_CN` | ✅ Complete |
-| Norwegian (Bokmål) | `nb_NO` | ✅ Complete |
+| Norwegian (Bokmål)  | `nb_NO` | ✅ Complete |
 
 To use a specific language, add this to your `user/config.php`:
+
 ```php
 define('YOURLS_LANG', 'de_DE'); // Replace with your preferred language code
 ```
@@ -158,13 +171,17 @@ define('YOURLS_LANG', 'de_DE'); // Replace with your preferred language code
 ## 🔧 Advanced Configuration
 
 ### Custom Storage Location
+
 You can customize where files are stored by modifying the storage location in the admin settings. The path should be:
+
 - **Web-accessible**: Files need to be accessible via HTTP
 - **Writable**: The web server must have write permissions
 - **Secure**: Outside the web root for security (recommended)
 
 ### File Retention Policies
+
 Configure automatic file cleanup:
+
 - **Never**: Keep files indefinitely
 - **24 Hours**: Delete after 1 day
 - **7 Days**: Delete after 1 week
@@ -173,6 +190,7 @@ Configure automatic file cleanup:
 - **Custom**: Set your own retention period
 
 ### Security Considerations
+
 - Files are validated for type and content
 - Path traversal attacks are prevented
 - CSRF protection is enabled
@@ -180,7 +198,9 @@ Configure automatic file cleanup:
 - Upload directory is protected with .htaccess
 
 ### CyberPanel & LiteSpeed Compatibility
+
 The plugin includes .htaccess rules that are fully compatible with:
+
 - **OpenLiteSpeed**: Standard Apache-compatible directives
 - **LiteSpeed Enterprise**: Enhanced with optional LiteSpeed-specific optimizations
 - **CyberPanel**: Seamless integration with CyberPanel's file management
@@ -191,22 +211,27 @@ The plugin includes .htaccess rules that are fully compatible with:
 ### Common Issues
 
 **File uploads not working:**
+
 - Check directory permissions (should be 755 for directories, 644 for files)
 - Verify upload directory exists and is writable
 - Check PHP upload limits in php.ini
 
 **Short URLs not redirecting:**
+
 - Ensure the upload directory is web-accessible
 - Check that files are being moved to the correct location
 - Verify .htaccess rules are working
 
 **Frontend uploads not showing:**
+
 - Check that "Enable Frontend Uploads" is set to "Yes" in admin settings
 - Verify the custom frontend is loading the plugin correctly
 - Check for PHP errors in the error log
 
 ### Debug Mode
+
 Enable debug mode by adding this to your `user/config.php`:
+
 ```php
 define('YOURLS_DEBUG', true);
 ```
@@ -214,6 +239,7 @@ define('YOURLS_DEBUG', true);
 ## 📊 Changelog
 
 ### Version 2.0.0 (Current)
+
 - ✨ **Major Enhancement**: Complete rewrite and modernization
 - 🎛️ **Admin Interface**: Full admin panel with settings management
 - 🌐 **Frontend Support**: Public upload interface for custom themes
@@ -224,6 +250,7 @@ define('YOURLS_DEBUG', true);
 - ⚡ **Performance**: Optimized database queries and file handling
 
 ### Version 1.x (Original)
+
 - Basic file upload and shortening functionality
 - Admin panel integration
 - Multiple language support
@@ -241,7 +268,7 @@ We welcome contributions! Here's how you can help:
 
 ## 📄 License
 
-**Free for personal use only.**  
+**Free for personal use only.**
 
 Commercial use requires permission. Contact us for licensing information.
 
@@ -260,8 +287,4 @@ Commercial use requires permission. Contact us for licensing information.
 ---
 
 <div align="center">
-
-
-[![News Targeted](https://img.shields.io/badge/News%20Targeted-Professional%20Services-red.svg)](https://newstargeted.com)
-
 </div>
