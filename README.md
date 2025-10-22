@@ -3,10 +3,12 @@
 [![Listed in Awesome YOURLS!](https://img.shields.io/badge/Awesome-YOURLS-C5A3BE)](https://github.com/YOURLS/awesome)
 [![YOURLS Version](https://img.shields.io/badge/YOURLS-1.7%2B-blue.svg)](http://yourls.org)
 [![PHP Version](https://img.shields.io/badge/PHP-7.4--8.6-green.svg)](https://php.net)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](#license)
 [![Version](https://img.shields.io/badge/Version-2.0.0-brightgreen.svg)](#changelog)
 
-**Version:** 2.0.0
-**Enhanced by:** Master3395 / News Targeted
+**Version:** 2.0.0  
+**Enhanced by:** Master3395 / News Targeted  
+**License:** MIT  
 **YOURLS Compatibility:** 1.7+ (Tested with YOURLS 1.10.2)
 
 A powerful YOURLS plugin that allows you to upload files to your server and automatically create short URLs for them. Perfect for sharing files, documents, images, and more with clean, trackable links.
@@ -15,7 +17,7 @@ A powerful YOURLS plugin that allows you to upload files to your server and auto
 
 ### Installation
 
-1. Upload the plugin folder to `/user/plugins/YOURLS-Upload-and-Shorten-Advanced/`
+1. Use the [Download Plugin](https://github.com/krissss/yourls-download-plugin) or manually upload to `/user/plugins/`
 2. Activate the plugin in your YOURLS admin panel
 3. Configure settings in "Upload Settings" page
 4. Start uploading files!
@@ -93,7 +95,19 @@ A powerful YOURLS plugin that allows you to upload files to your server and auto
 
 ## Installation
 
-### 1. Download the Plugin
+### Option 1: Using Download Plugin (Recommended)
+
+If you have the [Download Plugin](https://github.com/krissss/yourls-download-plugin) installed:
+
+1. Go to your YOURLS admin panel
+2. Navigate to the Download Plugin page
+3. Paste this URL: `https://github.com/master3395/YOURLS-Upload-and-Shorten-Advanced`
+4. Click "Download"
+5. The plugin will be automatically installed
+
+Then proceed to step 2 below for permissions and activation.
+
+### Option 2: Manual Installation
 
 ```bash
 # Navigate to your YOURLS plugins directory
@@ -364,3 +378,7 @@ We welcome contributions! Here's how you can help:
   - Fork → [adammatthews/YOURLS-Plugin--Share-Files](https://github.com/adammatthews/YOURLS-Plugin--Share-Files)
   - Fork → [fredl99/YOURLS-Upload-and-Shorten](https://github.com/fredl99/YOURLS-Upload-and-Shorten)
   - **Enhanced → News Targeted (This Version)**
+
+## License
+
+MIT License - Free to modify and distribute.
