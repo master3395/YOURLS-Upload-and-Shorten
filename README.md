@@ -5,13 +5,17 @@
 [![PHP Version](https://img.shields.io/badge/PHP-7.4--8.6-green.svg)](https://php.net)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](#license)
 [![Version](https://img.shields.io/badge/Version-2.0.0-brightgreen.svg)](#changelog)
+[![Discord](https://img.shields.io/discord/267294261941239808?color=7289da&label=Discord&logo=discord&logoColor=white)](https://discord.gg/nx9Kzrk)
 
-**Version:** 2.0.0  
-**Enhanced by:** Master3395 / News Targeted  
-**License:** MIT  
+**Version:** 2.0.0
+**Enhanced by:** Master3395 / News Targeted
+**License:** MIT
 **YOURLS Compatibility:** 1.7+ (Tested with YOURLS 1.10.2)
 
 A powerful YOURLS plugin that allows you to upload files to your server and automatically create short URLs for them. Perfect for sharing files, documents, images, and more with clean, trackable links.
+
+![Upload Interface](images/upload-interface.png)
+*Upload files and create short URLs instantly with an intuitive, modern interface*
 
 ## Quick Start
 
@@ -64,6 +68,9 @@ A powerful YOURLS plugin that allows you to upload files to your server and auto
 - Pagination for large file lists
 - Advanced filtering and search
 
+![Admin Integration](images/admin-integration.png)
+*Seamlessly integrated with YOURLS admin panel for easy management*
+
 ### Frontend Features
 
 - Clean, responsive upload form
@@ -91,7 +98,7 @@ A powerful YOURLS plugin that allows you to upload files to your server and auto
 - [Usage Guide](#usage)
 - [Internationalization](#internationalization)
 - [Troubleshooting](#troubleshooting)
-- [Changelog](#changelog)
+- [Changelog](#changelog) - [Full Version History](changelogs/README.md)
 
 ## Installation
 
@@ -155,6 +162,9 @@ Access the settings via: **Admin Panel → Plugins → Upload Settings**
 | **Frontend Max Size**   | Maximum file size for frontend uploads     | 5 MB                                  |
 | **Frontend File Types** | Allowed file types for frontend uploads    | jpg,jpeg,png,gif,pdf,txt              |
 
+![Settings Page](images/settings-page.png)
+*Configure all plugin settings from the intuitive admin interface*
+
 ### Storage Locations
 
 The plugin supports multiple storage locations:
@@ -213,6 +223,9 @@ Configure automatic file cleanup:
 - Extend file expiration periods
 - Monitor download statistics
 - View file details and metadata
+
+![File Management](images/file-management.png)
+*Manage all your uploaded files with detailed statistics and easy controls*
 
 ## Internationalization
 
@@ -278,6 +291,16 @@ The plugin includes .htaccess rules that are fully compatible with:
 - **CyberPanel** - Seamless integration with CyberPanel's file management
 - **AlmaLinux** - Tested and optimized for AlmaLinux 9.6 and 10
 
+### Theme Compatibility
+
+This plugin works seamlessly with both default and custom YOURLS themes:
+
+- **Standard YOURLS Theme** - Full compatibility with the default YOURLS interface
+- **Sleeky2 Theme** - Fully compatible with [Sleeky2](https://sleeky.flynntes.com/) frontend and backend themes
+- **Custom Themes** - Works with most custom YOURLS themes through standard hooks and filters
+
+The plugin's responsive design ensures a great experience regardless of which theme you're using.
+
 ## Troubleshooting
 
 ### Common Issues
@@ -322,33 +345,30 @@ Check the log file at: `user/logs/upload-plugin.log`
 
 ## Changelog
 
-### Version 2.0.0 (Current)
+**Current Version:** 2.0.0 (October 2025)
 
-- **Major Enhancement** - Complete rewrite and modernization
-- **Admin Interface** - Full admin panel with settings management
-- **Frontend Support** - Public upload interface for custom themes
-- **Multiple Storage** - Support for multiple storage locations
-- **File Expiration** - Automatic cleanup with configurable retention
-- **Security** - Enhanced security with CSRF protection and validation
-- **Mobile** - Fully responsive design
-- **i18n** - Norwegian Bokmål translation added
-- **Code Quality** - Modular structure, under 500 lines per file
-- **Performance** - Optimized database queries and file handling
-- **Bulk Operations** - Manage multiple files at once
-- **Advanced Filtering** - Filter files by type, expiration, and search
+This release represents a complete rewrite with enhanced security, modern UI/UX, and advanced features including frontend uploads, file expiration, multiple storage locations, and comprehensive admin interface.
 
-### Version 1.x (Original)
+**View Full Changelog:** [changelogs/README.md](changelogs/README.md)
 
-- Basic file upload and shortening functionality
-- Admin panel integration
-- Multiple language support (German, French, Spanish, Chinese)
-- File management features
+### Quick Summary
+
+- ✅ Complete rewrite and modernization
+- ✅ Enhanced security with CSRF protection and validation
+- ✅ Frontend upload support for public users
+- ✅ Multiple storage locations and file expiration
+- ✅ Fully responsive mobile-first design
+- ✅ Norwegian Bokmål translation added
+- ✅ Modular code structure (under 500 lines per file)
+
+For detailed version history and migration guides, see the [changelogs directory](changelogs/).
 
 ## Support & Contribution
 
 - **Issues:** [GitHub Issues](https://github.com/master3395/YOURLS-Upload-and-Shorten-Advanced/issues)
+- **Discord:** [Join our Discord Server](https://discord.gg/nx9Kzrk)
 - **Website:** [newstargeted.com](https://newstargeted.com)
-- **Email:** info@newstargeted.com
+- **Email:** [info@newstargeted.com](mailto:info@newstargeted.com)
 
 ### Contributing
 
@@ -362,10 +382,10 @@ We welcome contributions! Here's how you can help:
 
 ## Author
 
-**Master3395 / News Targeted**
+### Master3395 / News Targeted
 
 - Website: [newstargeted.com](https://newstargeted.com/)
-- Email: info@newstargeted.com
+- Email: [info@newstargeted.com](mailto:info@newstargeted.com)
 - GitHub: [@master3395](https://github.com/master3395)
 
 ## Credits
