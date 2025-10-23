@@ -13,7 +13,6 @@
 
 **License:** MIT
 
-**YOURLS Compatibility:** 1.7+ (Tested with YOURLS 1.10.2)
 
 A powerful YOURLS plugin that allows you to upload files to your server and automatically create short URLs for them. Perfect for sharing files, documents, images, and more with clean, trackable links.
 
@@ -103,6 +102,7 @@ A powerful YOURLS plugin that allows you to upload files to your server and auto
 - [Configuration Guide](guides/configuration.md) - Settings and options
 - [Usage Guide](guides/usage.md) - How to use the plugin
 - [Advanced Configuration](guides/advanced-configuration.md) - Custom setups
+- [Compatibility Guide](guides/compatibility.md) - System requirements and compatibility
 - [Internationalization](guides/internationalization.md) - Language support
 - [Troubleshooting Guide](guides/troubleshooting.md) - Common issues
 - [Changelog](changelogs/README.md) - Version history and updates
@@ -179,30 +179,9 @@ Want to contribute a translation? See the [Internationalization Guide](guides/in
 
 ## Compatibility
 
-- **YOURLS:** 1.7+
-- **PHP:** 7.4 - 8.6
-- **Web Servers:** Apache, Nginx, OpenLiteSpeed, LiteSpeed Enterprise
-- **Control Panels:** CyberPanel, cPanel, Plesk
-- **Tested:** YOURLS 1.10.2 on AlmaLinux 9.6 & 10 with OpenLiteSpeed and LiteSpeed Enterprise
+Compatible with YOURLS 1.7+, PHP 7.4-8.6, and all major web servers (Apache, Nginx, OpenLiteSpeed, LiteSpeed Enterprise). Works with CyberPanel, cPanel, and Plesk. Tested on AlmaLinux 9.6 & 10.
 
-### CyberPanel & LiteSpeed Compatibility
-
-The plugin includes .htaccess rules that are fully compatible with:
-
-- **OpenLiteSpeed** - Standard Apache-compatible directives
-- **LiteSpeed Enterprise** - Enhanced with optional LiteSpeed-specific optimizations
-- **CyberPanel** - Seamless integration with CyberPanel's file management
-- **AlmaLinux** - Tested and optimized for AlmaLinux 9.6 and 10
-
-### Theme Compatibility
-
-This plugin works seamlessly with both default and custom YOURLS themes:
-
-- **Standard YOURLS Theme** - Full compatibility with the default YOURLS interface
-- **Sleeky2 Theme** - Fully compatible with [Sleeky2](https://sleeky.flynntes.com/) frontend and backend themes
-- **Custom Themes** - Works with most custom YOURLS themes through standard hooks and filters
-
-The plugin's responsive design ensures a great experience regardless of which theme you're using.
+For complete compatibility details, system requirements, and theme compatibility, see the [Compatibility Guide](guides/compatibility.md).
 
 ## Troubleshooting
 

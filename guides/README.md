@@ -16,6 +16,9 @@ Step-by-step instructions for using the plugin including admin uploads, frontend
 ### [Advanced Configuration](advanced-configuration.md)
 Advanced customization options including custom storage locations, rate limiting, and file validation settings.
 
+### [Compatibility Guide](compatibility.md)
+Complete compatibility information including system requirements, web servers, control panels, themes, and browser support.
+
 ### [Internationalization](internationalization.md)
 Language support information including available translations and how to configure your preferred language.
 
