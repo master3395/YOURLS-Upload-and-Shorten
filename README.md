@@ -8,8 +8,11 @@
 [![Discord](https://img.shields.io/discord/267294261941239808?color=7289da&label=Discord&logo=discord&logoColor=white)](https://discord.gg/nx9Kzrk)
 
 **Version:** 2.0.0
-**Enhanced by:** Master3395 / News Targeted
+
+**Enhanced by:** Master3395 / [News Targeted](https://newstargeted.com/)
+
 **License:** MIT
+
 **YOURLS Compatibility:** 1.7+ (Tested with YOURLS 1.10.2)
 
 A powerful YOURLS plugin that allows you to upload files to your server and automatically create short URLs for them. Perfect for sharing files, documents, images, and more with clean, trackable links.
