@@ -81,6 +81,9 @@ A powerful YOURLS plugin that allows you to upload files to your server and auto
 - Custom upload messages
 - Rate limiting per IP
 
+![Public Upload Interface](images/public-upload-interface.png)
+*Beautiful public upload interface with file guidelines and easy-to-use controls*
+
 ### Security & Performance
 
 - CSRF protection for secure form submissions
