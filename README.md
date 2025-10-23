@@ -99,186 +99,83 @@ A powerful YOURLS plugin that allows you to upload files to your server and auto
 
 ## Documentation
 
-- [Installation Guide](#installation)
-- [Configuration Guide](#configuration)
-- [Usage Guide](#usage)
-- [Internationalization](#internationalization)
-- [Troubleshooting](#troubleshooting)
-- [Changelog](#changelog) - [Full Version History](changelogs/README.md)
+- [Installation Guide](guides/installation.md) - Complete installation instructions
+- [Configuration Guide](guides/configuration.md) - Settings and options
+- [Usage Guide](guides/usage.md) - How to use the plugin
+- [Advanced Configuration](guides/advanced-configuration.md) - Custom setups
+- [Internationalization](guides/internationalization.md) - Language support
+- [Troubleshooting Guide](guides/troubleshooting.md) - Common issues
+- [Changelog](changelogs/README.md) - Version history and updates
 
 ## Installation
 
-### Option 1: Using Download Plugin (Recommended)
+See the complete [Installation Guide](guides/installation.md) for detailed instructions.
 
-If you have the [Download Plugin](https://github.com/krissss/yourls-download-plugin) installed:
+### Quick Install
 
-1. Go to your YOURLS admin panel
-2. Navigate to the Download Plugin page
-3. Paste this URL: `https://github.com/master3395/YOURLS-Upload-and-Shorten-Advanced`
-4. Click "Download"
-5. The plugin will be automatically installed
+1. Install via [Download Plugin](https://github.com/krissss/yourls-download-plugin) or clone to `/user/plugins/`
+2. Set directory permissions (755 for plugin, 777 for uploads)
+3. Activate in YOURLS admin panel
+4. Configure settings
 
-Then proceed to step 2 below for permissions and activation.
-
-### Option 2: Manual Installation
-
-```bash
-# Navigate to your YOURLS plugins directory
-cd /path/to/yourls/user/plugins/
-
-# Clone the plugin
-git clone https://github.com/master3395/YOURLS-Upload-and-Shorten-Advanced.git
-```
-
-### 2. Set Permissions
-
-```bash
-# Set proper ownership and permissions
-chown -R yourls_user:yourls_group YOURLS-Upload-and-Shorten-Advanced/
-chmod -R 755 YOURLS-Upload-and-Shorten-Advanced/
-chmod 777 YOURLS-Upload-and-Shorten-Advanced/uploads/
-```
-
-### 3. Activate the Plugin
-
-1. Go to your YOURLS admin panel: `https://yourls.example.com/admin/plugins.php`
-2. Find "Upload & Shorten" in the plugin list
-3. Click "Activate"
-4. The plugin will automatically create necessary database tables
-
-### 4. Configure Settings
-
-1. Navigate to **Upload Settings** in the admin panel
-2. Configure your preferred settings (max file size, allowed file types, storage location, frontend upload settings)
-3. Save your configuration
+For detailed steps, troubleshooting, and server-specific instructions, see the [Installation Guide](guides/installation.md).
 
 ## Configuration
 
-### Admin Settings
-
-Access the settings via: **Admin Panel → Plugins → Upload Settings**
-
-| Setting                       | Description                                | Default                               |
-| ----------------------------- | ------------------------------------------ | ------------------------------------- |
-| **Max File Size**       | Maximum file size for uploads              | 10 MB                                 |
-| **Allowed File Types**  | Comma-separated list of allowed extensions | jpg,jpeg,png,gif,pdf,doc,docx,txt,zip |
-| **File Retention**      | How long to keep files before deletion     | Never                                 |
-| **Storage Location**    | Directory where files are stored           | `/uploads/`                         |
-| **Frontend Uploads**    | Allow public users to upload files         | Disabled                              |
-| **Frontend Max Size**   | Maximum file size for frontend uploads     | 5 MB                                  |
-| **Frontend File Types** | Allowed file types for frontend uploads    | jpg,jpeg,png,gif,pdf,txt              |
+Configure the plugin through **Admin Panel → Upload Settings**. See the [Configuration Guide](guides/configuration.md) for detailed settings documentation.
 
 ![Settings Page](images/settings-page.png)
 *Configure all plugin settings from the intuitive admin interface*
 
-### Storage Locations
+### Key Settings
 
-The plugin supports multiple storage locations:
+- **File Upload Limits** - Max size and allowed types
+- **Storage Locations** - Multiple storage paths with individual settings
+- **File Expiration** - Automatic cleanup (24 hours to never)
+- **Frontend Uploads** - Public upload controls and restrictions
+- **Security** - CSRF protection, MIME validation, rate limiting
 
-- Configure different paths for different file types
-- Set per-location size limits
-- Enable/disable locations individually
-- Monitor storage statistics per location
-- Test storage location accessibility
-
-### File Expiration Settings
-
-Configure automatic file cleanup:
-
-- **Never** - Keep files indefinitely
-- **24 Hours** - Delete after 1 day
-- **7 Days** - Delete after 1 week
-- **31 Days** - Delete after 1 month
-- **90 Days** - Delete after 3 months
-- **Custom** - Set your own retention period
-
-### Security Features
-
-- Files are validated for type and content
-- Path traversal attacks are prevented
-- CSRF protection is enabled
-- Rate limiting prevents abuse
-- Upload directory is protected with .htaccess
-- Dangerous file extensions are blocked
-- Content scanning for malicious code
+For complete configuration details, including advanced options and security settings, see the [Configuration Guide](guides/configuration.md).
 
 ## Usage
 
-### Admin Upload
+See the complete [Usage Guide](guides/usage.md) for detailed instructions.
 
-1. Go to **Admin Panel → Upload & Shorten**
-2. Select a file from your computer
-3. Optionally customize short URL and title
-4. Choose storage location and expiration
-5. Click "Upload & Create Short URL"
-6. Get your short URL instantly
+### Quick Usage
 
-### Frontend Upload (if enabled)
+**Admin Upload:**
+1. Go to **Upload & Shorten** in admin panel
+2. Select file, customize options
+3. Get instant short URL
 
-1. Visit your YOURLS frontend
-2. Use the "Upload & Shorten File" section
-3. Select a file and configure options
-4. Click "Upload & Shorten"
-5. Copy the generated short URL
+**Frontend Upload** (if enabled):
+1. Visit YOURLS homepage
+2. Use upload form
+3. Share generated short URL
 
-### File Management
-
-- View all uploaded files in **Admin Panel → Uploaded Files**
-- Filter files by type, expiration status, or search
-- Delete files individually or in bulk
-- Extend file expiration periods
-- Monitor download statistics
-- View file details and metadata
+**File Management:**
+- View, search, and filter files in admin panel
+- Track downloads and statistics
+- Bulk operations and expiration management
 
 ![File Management](images/file-management.png)
 *Manage all your uploaded files with detailed statistics and easy controls*
 
+For detailed workflows, best practices, and advanced features, see the [Usage Guide](guides/usage.md).
+
 ## Internationalization
 
-The plugin supports multiple languages:
+The plugin is available in 6 languages. See the [Internationalization Guide](guides/internationalization.md) for details.
 
-| Language             | Code      | Status      | Contributor      |
-| -------------------- | --------- | ----------- | ---------------- |
-| English              | `en_US` | ✅ Complete | Built-in         |
-| German               | `de_DE` | ✅ Complete | Fredl            |
-| French               | `fr_FR` | ✅ Complete | Alfonso Vivancos |
-| Spanish              | `es_ES` | ✅ Complete | Alfonso Vivancos |
-| Chinese (Simplified) | `zh_CN` | ✅ Complete | Mo Lun           |
-| Norwegian (Bokmål)  | `nb_NO` | ✅ Complete | Master3395       |
+**Supported:** English, German, French, Spanish, Chinese (Simplified), Norwegian (Bokmål)
 
-To use a specific language, add this to your `user/config.php`:
-
+Configure in `user/config.php`:
 ```php
-define('YOURLS_LANG', 'de_DE'); // Replace with your preferred language code
+define('YOURLS_LANG', 'nb_NO'); // Use your language code
 ```
 
-## Advanced Configuration
+Want to contribute a translation? See the [Internationalization Guide](guides/internationalization.md).
 
-### Custom Storage Location
-
-You can customize where files are stored by modifying the storage location in the admin settings. The path should be:
-
-- **Web-accessible** - Files need to be accessible via HTTP
-- **Writable** - The web server must have write permissions
-- **Secure** - Protected with .htaccess to prevent PHP execution
-
-### Rate Limiting
-
-Configure rate limits to prevent abuse:
-
-- Set uploads per hour limit
-- Per-IP address tracking
-- Automatic cleanup of old rate limit data
-
-### File Validation
-
-The plugin validates files on multiple levels:
-
-- File extension checking
-- MIME type validation
-- Content scanning for malicious code
-- Size limit enforcement
-- Dangerous extension blocking
 
 ## Compatibility
 
@@ -309,65 +206,32 @@ The plugin's responsive design ensures a great experience regardless of which th
 
 ## Troubleshooting
 
+Having issues? See the [Troubleshooting Guide](guides/troubleshooting.md) for solutions.
+
 ### Common Issues
 
-**File uploads not working:**
-
-- Check directory permissions (should be 755 for directories, 644 for files)
-- Verify upload directory exists and is writable
-- Check PHP upload limits in php.ini (`upload_max_filesize`, `post_max_size`)
-- Ensure database tables were created during activation
-
-**Short URLs not redirecting:**
-
-- Ensure the upload directory is web-accessible
-- Check that files are being moved to the correct location
-- Verify .htaccess rules are working
-- Check YOURLS URL rewriting is configured correctly
-
-**Frontend uploads not showing:**
-
-- Check that "Enable Frontend Uploads" is set to "Yes" in admin settings
-- Verify the frontend theme is compatible
-- Check for JavaScript errors in browser console
-- Check for PHP errors in the error log
-
-**Database errors:**
-
-- Verify database tables exist (`yourls_upload_files`, `yourls_upload_settings`)
-- Check database user has CREATE and INSERT permissions
-- Run the activation function again to create missing tables
+- **File uploads not working** - Check permissions and PHP limits
+- **Short URLs not redirecting** - Verify file location and .htaccess
+- **Frontend uploads not showing** - Check settings and theme compatibility
+- **Database errors** - Verify tables and permissions
 
 ### Debug Mode
 
-Enable debug mode by adding this to your `user/config.php`:
-
 ```php
+// Add to user/config.php
 define('YOURLS_DEBUG', true);
-define('UPLOAD_DEBUG', true); // Plugin-specific debugging
+define('UPLOAD_DEBUG', true);
 ```
 
-Check the log file at: `user/logs/upload-plugin.log`
+For detailed solutions and debug instructions, see the [Troubleshooting Guide](guides/troubleshooting.md).
 
 ## Changelog
 
 **Current Version:** 2.0.0 (October 2025)
 
-This release represents a complete rewrite with enhanced security, modern UI/UX, and advanced features including frontend uploads, file expiration, multiple storage locations, and comprehensive admin interface.
+Complete rewrite with enhanced security, modern UI/UX, frontend uploads, file expiration, multiple storage locations, and comprehensive admin interface.
 
-**View Full Changelog:** [changelogs/README.md](changelogs/README.md)
-
-### Quick Summary
-
-- ✅ Complete rewrite and modernization
-- ✅ Enhanced security with CSRF protection and validation
-- ✅ Frontend upload support for public users
-- ✅ Multiple storage locations and file expiration
-- ✅ Fully responsive mobile-first design
-- ✅ Norwegian Bokmål translation added
-- ✅ Modular code structure (under 500 lines per file)
-
-For detailed version history and migration guides, see the [changelogs directory](changelogs/).
+View complete version history and release notes in the [changelogs directory](changelogs/).
 
 ## Support & Contribution
 
@@ -396,14 +260,9 @@ We welcome contributions! Here's how you can help:
 
 ## Credits
 
-- **Original Author**: [mtttmpl](https://github.com/mtttmpl/YOURLS-Plugin--Share-Files) - Creator of the original Share Files plugin
-- **Fork Contributors**: [adammatthews](https://github.com/adammatthews/YOURLS-Plugin--Share-Files), [fredl99](https://github.com/fredl99/YOURLS-Upload-and-Shorten)
-- **Latest Enhanced Version**: [News Targeted](https://newstargeted.com) - Most updated and feature-rich version
-- **Development Lineage**:
-  - Original → [mtttmpl/YOURLS-Plugin--Share-Files](https://github.com/mtttmpl/YOURLS-Plugin--Share-Files)
-  - Fork → [adammatthews/YOURLS-Plugin--Share-Files](https://github.com/adammatthews/YOURLS-Plugin--Share-Files)
-  - Fork → [fredl99/YOURLS-Upload-and-Shorten](https://github.com/fredl99/YOURLS-Upload-and-Shorten)
-  - **Enhanced → News Targeted (This Version)**
+**Enhanced by:** Master3395 / [News Targeted](https://newstargeted.com)
+
+For complete development history, original authors, and contributor credits, see the [Version 1.0.0 Changelog](changelogs/v1.0.0.md).
 
 ## License
 
